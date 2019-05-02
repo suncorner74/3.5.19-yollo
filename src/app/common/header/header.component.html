@@ -1,0 +1,121 @@
+<header>
+    <!-- <div class="top-slide" id="top-slide" style="display:none; ">
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">I'm looking in</label>
+                        <i class="material-icons dp48 search-icon">search</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="header">
+        <div class="navbar-fixed header-nav">
+            <nav>
+                <div class="nav-wrapper nav-cantact"> <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>demo</li>
+                        <li>demo</li>
+                        <li>demo</li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <ul>
+                            <li class="nav-dropdown"> <a class="bold-nav" href="#">Advertise with us</a> </li>
+                            <li class="nav-dropdown"> <a class="bold-nav" href="#">Register your buisness</a> </li>
+                        </ul>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="header-icon"> <a class="login" id="login-btn1" href="#"><i class="fa fa-user"></i></a> </div>
+            <div class="header-top">
+                <a class="logo" href="#"><img src="assets/image/logo.png" alt="logo"></a>
+                <div class="search-bar">
+                    <form>
+                        <input type="search" class="search search-all" placeholder="Search">
+                        <select class="search-all">
+              <option>All categories</option>
+              <option>All categories</option>
+              <option>All categories</option>
+            </select>
+                        <button type="button" class="search-button search-all"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div id="mySidebar" class="header-bottom">
+                <div class="header-bottom-inner">
+                    <div class="header-bottom-left">
+                        <div class="col-3"> <span><i class="material-icons dp48">location_on</i></span>
+                            <p></p>
+                            <h4>Hyderabad
+                                <a href="#" id="btn1"> <i class="fa fa-chevron-down down-btn"></i> </a>
+                            </h4>
+                        </div>
+                        <div class="col-9">
+                            <ul>
+                                <li class="nav-dropdown"> <i class="fa fa-chevron-down down-btn"></i> <a class="bold-nav" href="#">Categories</a>
+                                    <ul class="drop-down-menu">
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                        <li><a href="#">Lorem</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-bottom-right">
+                        <div class="header-bottom-right-inner">
+                            <div class="col-9">
+                                <ul>
+                                    <li class="nav-dropdown"> <i class="fa fa-chevron-down down-btn"></i> <a class="bold-nav" href="#">Advertise with us</a>
+                                        <ul class="drop-down-menu">
+                                            <li><a href="#">Lorem</a></li>
+                                            <li><a href="#">Lorem</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-dropdown"> <i class="fa fa-chevron-down down-btn"></i> <a class="bold-nav" href="#">Register your buisness</a>
+                                        <ul class="drop-down-menu">
+                                            <li><a href="#">Lorem</a></li>
+                                            <li><a href="#">Lorem</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="login-display-none"><a href="#" id="login-btn" (click)="openVerticallyCentered(content)">Login/Sign UP</a></li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 sm-contact">
+            <div class="container"> <span><i class="fa fa-map-marker-alt"></i></span> Hyderabad <a href="#"> Change </a> </div>
+        </div>
+    </div>
+</header>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
