@@ -11,10 +11,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(user) {
-    let url: string = URL + `users/login`;
+    let url: string = 'http://localhost:3000' + `/login`;
     return this.http.post<any>(url, user)
       .pipe(map(user => {
-        if (user && user.token) {
+        if (user) {
           sessionStorage.setItem('currentUser', JSON.stringify(user));
         }
         return user;
