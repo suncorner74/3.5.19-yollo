@@ -7,14 +7,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/^1.12.2/themes/prism.css" />
-
+    <link type="text/css" rel="stylesheet" href="./assets/css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <app-root></app-root>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/owlcarousel.js"></script>
+    <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('ul.tabs').tabs();
+        });
+
+        $(document).ready(function() {
+            $('ul.tabs').tabs('select_tab', 'tab_id');
+            $(".first_tab").click();
+        });
+
+        $(document).ready(function() {
+            $(".button-collapse").sideNav();
+        });
+
+
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                $("#top-slide").toggle("slow");
+            });
+
+            $("#btn2").click(function() {
+                $("#top-slide").hide("slow");
+            });
+
+
+
+            $("#login-btn").click(function() {
+                $("#login-conent").toggle("slow");
+            });
+
+            $("#login-btn1").click(function() {
+                $("#login-conent").toggle("slow");
+            });
+
+            $("#close-btn").click(function() {
+                $("#login-conent").hide("slow");
+            });
+
+        });
+    </script>
+    <div class="main">
+        <app-root></app-root>
+    </div>
+
 </body>
 
 </html>

@@ -1,3 +1,34 @@
-<p>
-  login works!
-</p>
+<div class="conatiner margin-top-30">
+    <div class=row>
+        <div class="col-xs-12 col-lg-6 col-md-6"> content</div>
+        <div class="col-xs-12 col-lg-6 col-md-6">
+            <ngb-tabset>
+                <ngb-tab title="Sign In To Application">
+                    <ng-template ngbTabContent>
+                        <div class="form">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <!-- <label>
+                              <input type="checkbox" checked="checked" name="remember"> Forget Password
+                            </label> -->
+                            <div class="form-group">
+                                <button class="btn btn-primary">Register</button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle><b>Sign Up</b></ng-template>
+                    <ng-template ngbTabContent>
+                        <div>
+                            <app-register></app-register>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>

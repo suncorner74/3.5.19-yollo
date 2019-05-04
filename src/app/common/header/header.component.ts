@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-  openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true , size:'lg' });
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
   }
 }

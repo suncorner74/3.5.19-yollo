@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from './../../services/user.service';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
 
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.userDetetails = Object.assign({}, resp);
       }, (error) => {
         console.log(`error: ${error}`);
-      })
+      });
   }
 
 

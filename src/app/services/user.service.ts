@@ -24,5 +24,4 @@ export class UserService {
   logout() {
     sessionStorage.clear();
   }
-  
 }
