@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from './../../services/user.service';
 import { InputTextModule } from 'primeng/inputtext';
-import { MustMatch } from './../../_helpers/must-match.validator'
+import { MustMatch } from './../../_helpers/must-match.validator';
 import { Router } from '@angular/router';
 
 @Component({

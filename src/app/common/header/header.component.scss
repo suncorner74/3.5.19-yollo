@@ -1,13 +1,17 @@
     .header-bottom-right-inner {
         float: none;
     }
-    
+
     .modal-content,
     .modal-header,
     .modal-footer {
         border: none;
     }
-    
+
     .modal-header .close {
         margin: -3rem -1rem -1rem auto;
+    }
+
+    .modal .modal-footer {
+        background: none;
     }

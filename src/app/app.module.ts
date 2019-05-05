@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import { RegisterComponent } from './components/register/register.component';
+import {CheckboxModule} from 'primeng/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { RegisterComponent } from './components/register/register.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    InputTextModule
+    InputTextModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
