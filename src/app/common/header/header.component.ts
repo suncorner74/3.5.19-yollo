@@ -9,12 +9,20 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class HeaderComponent implements OnInit {
 
   closeResult: string;
-
-  constructor(private modalService: NgbModal) {}
+  userDetails = null;
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+    this.userDetails = JSON.parse(sessionStorage.getItem('currentUser'));
   }
   openLg(content) {
     this.modalService.open(content, { size: 'lg' });
+  }
+
+  logout(){
+    sessionStorage.clear();
+    location.reload();
+
+    // alert('logout successfully')
   }
 }

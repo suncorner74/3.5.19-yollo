@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from './../../services/user.service';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
+import { MustMatch } from './../../_helpers/must-match.validator'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,27 +15,35 @@ export class LoginComponent implements OnInit {
 
   getLoginSubscription = null;
   userDetetails = null;
-  loginForm = null;
+  loginForm: FormGroup;
+  submitted = null;
 
   constructor(
     private userService: UserService,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    private router:Router) {
     this.userDetetails = null;
   }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      username: [''],
-      password: ['']
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
+  get f() { return this.loginForm.controls; }
 
-
-  getLogin() {
+  getLogin(event) {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
     this.getLoginSubscription = this.userService.login(this.loginForm.value)
       .subscribe((resp) => {
         this.userDetetails = Object.assign({}, resp);
+        // this.router.navigateByUrl('/');
+        location.reload();
       }, (error) => {
         console.log(`error: ${error}`);
       });
