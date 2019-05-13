@@ -1,3 +1,7 @@
+.login{
+    margin-top:-40px;
+}
+
 .nav-tabs .nav-link,
 .nav-tabs {
     border: none;
@@ -39,6 +43,9 @@ color:#26a69a;
 .padding-right {
     padding-right: 20px;
 }
+.margin-top-minus-32{
+    margin-top:-32px;
+}
 
 .margin-top-50 {
     margin-top: 50px
@@ -46,4 +53,24 @@ color:#26a69a;
 
 button:focus{
     background: none;
+}
+.background-color {
+    background: #26a69a;
+    position: relative;
+    left: -38px;
+    top: 0;
+    margin-bottom: -80px;
+    margin-top: -32px;
+
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    background: #26a69a;
+}
+.btn{
+    width: 303px;
+    height: 40px;
+}
+ul li{
+    list-style-type: none;
+    margin:30px 0 30px 10px;
 }

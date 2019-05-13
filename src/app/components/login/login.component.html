@@ -1,22 +1,52 @@
-<div class="conatiner margin-top-30">
+<div class="login container">
     <div class=row>
-        <div class="col-xs-12 col-lg-6 col-md-6"> Benefits of Account</div>
+        <div class="col-xs-12 col-lg-6 col-md-6 background-color">
+            <h3>Benfits of account</h3>
+            <ul>
+                <li>
+                    <span>
+                        <i class="material-icons white font-14 ">
+                            how_to_reg
+                        </i>
+                        <span class=" padding-left-20 text-color">Fast And secure Investment</span>  
+                    </span>
+                </li>
+                <li>
+                    <span>
+                        <i class="material-icons white font-14 ">
+                            how_to_reg
+                        </i>
+                        <span class="padding-left-20  text-color">Fast And secure Investment</span> 
+                    </span>
+                </li>
+                <li>
+                        <span>
+                                <i class="material-icons white font-14 ">
+                                    how_to_reg
+                                </i>
+                               <span class="padding-left-20 text-color">Fast And secure Investment</span> 
+                            </span>
+                </li>
+            </ul>
+        </div>
         <form [formGroup]="loginForm">
-            <div class="">
+            <div class="margin-top-minus-32">
                 <ngb-tabset>
                     <ngb-tab title="Sign In To Application">
                         <ng-template ngbTabContent>
                             <div class="form">
                                 <div class='form-group required'>
                                     <label for="uname"><b>Username</b></label>
-                                    <input type="text" placeholder="Enter Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required>
+                                    <input type="text" placeholder="Enter Username" formControlName="username"
+                                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required>
                                     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                                         <div *ngIf="f.username.errors.required">Username is required</div>
                                     </div>
                                 </div>
                                 <div class='form-group required'>
                                     <label for="psw"><b>Password</b></label>
-                                    <input type="password" placeholder="Enter Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+                                    <input type="password" placeholder="Enter Password" formControlName="password"
+                                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
                                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                         <div *ngIf="f.password.errors.required">Password is required</div>
                                     </div>
@@ -27,8 +57,8 @@
                                     <span class="padding-lr"><a href="">Other Login Issue</a></span>
                                 </div>
                                 <!-- <div class="form-group"> <span>By Logging in you in agree to your terms and condition and privacy policy</span></div> -->
-                                <div class="form-group margin-top-50">
-                                    <button class="btn btn-primary" (click)="getLogin($event)">Login</button>
+                                <div class="form-group margin-top-50 text-center">
+                                    <button class="btn btn-primary " (click)="getLogin($event)">Login</button>
                                 </div>
                             </div>
                         </ng-template>
