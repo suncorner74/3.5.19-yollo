@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import { RegisterComponent } from './components/register/register.component';
 import {CheckboxModule} from 'primeng/checkbox';
+import {FileUploadModule} from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     AppRoutingModule,
     HttpClientModule,
     InputTextModule,
-    CheckboxModule
+    CheckboxModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

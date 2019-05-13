@@ -2,18 +2,30 @@
 .nav-tabs {
     border: none;
 }
+.modal-header .close{
+color:#26a69a;
+}
 
 .nav-tabs .nav-link.active {
     border-bottom: 2px solid #26a69a;
 }
+.required label {
+    font-weight: bold;
+}
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+    
 
 .nav-link {
     display: block;
     padding: .5rem 1.3rem;
 }
 
-.nav-tabs .nav-link {
-    margin-right: 16px;
+.modal-dialog{
+    margin:0;
 }
 
 .form {
@@ -30,4 +42,8 @@
 
 .margin-top-50 {
     margin-top: 50px
+}
+
+button:focus{
+    background: none;
 }
