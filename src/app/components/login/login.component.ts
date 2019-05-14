@@ -21,14 +21,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
-    private router:Router) {
+    private router: Router) {
     this.userDetetails = null;
   }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 

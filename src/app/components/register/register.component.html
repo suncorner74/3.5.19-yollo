@@ -1,10 +1,10 @@
 <div class="form ">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      
+
         <div class="form-group required">
             <label>User Name</label>
-            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
                 <div *ngIf="f.userName.errors.required">User Name is required</div>
             </div>
         </div>
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="form-group checkbox">
-                <label><input type="checkbox" value=""><span class="padding-left-30">I accept terms and condition</span></label>
+            <label><input type="checkbox" value=""><span class="padding-left-30">I accept terms and condition</span></label>
         </div>
         <!-- <div class="form-group">
             <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
@@ -62,7 +62,7 @@
         </ng-template>
     </p-fileUpload>
         </div> -->
-      
+
         <!-- <div>
             <p-checkbox name="groupname" value="val1" [(ngModel)]="selectedValues"></p-checkbox>
             <label for=""> I accept terms and Condition</label>
