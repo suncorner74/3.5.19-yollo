@@ -21,6 +21,18 @@ export class UserService {
       }));
   }
 
+
+  register(user) {
+    let url: string = `http://localhost:3000/users/login`;
+    return this.http.post<any>(url, user)
+      .pipe(map(user => {
+        if (user) {
+          sessionStorage.setItem('currentUser', JSON.stringify(user));
+        }
+        return user;
+      }));
+  }
+
   logout() {
     sessionStorage.clear();
   }
