@@ -13,13 +13,19 @@ export class HeaderComponent implements OnInit {
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.userDetails = JSON.parse(sessionStorage.getItem('currentUser'));
+    let details = JSON.parse(sessionStorage.getItem('currentUser'));
+
+    if (details.user_level) {
+      this.userDetails = details;
+    }
+
   }
+
   openLg(content) {
     this.modalService.open(content, { size: 'lg' });
   }
 
-  logout(){
+  logout() {
     sessionStorage.clear();
     location.reload();
 

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   userDetetails = null;
   loginForm: FormGroup;
   submitted = null;
+  invalid = false;
 
   constructor(
     private userService: UserService,
@@ -43,9 +44,15 @@ export class LoginComponent implements OnInit {
       .subscribe((resp) => {
         this.userDetetails = Object.assign({}, resp);
         // this.router.navigateByUrl('/');
-        location.reload();
+        if (resp.user_level) {
+          location.reload();
+        } else {
+          this.invalid = true;
+        }
+
       }, (error) => {
-        console.log(`error: ${error}`);
+        this.invalid = true;
+         console.log(`error: ${error}`);
       });
   }
 
