@@ -2,10 +2,10 @@
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group required">
-            <label>User Name</label>
-            <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
-            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
-                <div *ngIf="f.userName.errors.required">User Name is required</div>
+            <label>Full Name</label>
+            <input type="text" formControlName="fullName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+            <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                <div *ngIf="f.fullName.errors.required">Full Name is required</div>
             </div>
         </div>
         <div class="form-group required">
@@ -41,7 +41,7 @@
                 <div *ngIf="f.phoneNumber.errors.mustMatch">Please enter valid phone number</div>
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Pancard Number</label>
             <input type="text" formControlName="panCard" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.panCard.errors }" />
             <div *ngIf="submitted && f.panCard.errors" class="invalid-feedback">
@@ -50,25 +50,11 @@
             <div *ngIf="invalid" class="color-red">
                 Invalid data
             </div>
-        </div>
+        </div> -->
         <div class="form-group checkbox">
             <label><input type="checkbox" value=""><span class="padding-left-30">I accept terms and condition</span></label>
         </div>
-        <!-- <div class="form-group">
-            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-            multiple="multiple" accept="image/*" maxFileSize="1000000">
-        <ng-template pTemplate="content">
-            <ul *ngIf="uploadedFiles.length">
-                <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-            </ul>
-        </ng-template>
-    </p-fileUpload>
-        </div> -->
-
-        <!-- <div>
-            <p-checkbox name="groupname" value="val1" [(ngModel)]="selectedValues"></p-checkbox>
-            <label for=""> I accept terms and Condition</label>
-        </div> -->
+       
         <div class="form-group margin-top-50">
             <button class="btn btn-primary">Register</button>
         </div>

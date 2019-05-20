@@ -36,10 +36,10 @@
                         <ng-template ngbTabContent>
                             <div class="form">
                                 <div class="form-group required">
-                                    <label>Username</label>
-                                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                                        <div *ngIf="f.username.errors.required">Email is required</div>
+                                    <label>Registerd Mobile number Or Email Id <span class="required label"></span></label>
+                                    <input type="text" formControlName="emailOrmobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailOrmobile.errors }" />
+                                    <div *ngIf="submitted && f.emailOrmobile.errors" class="invalid-feedback">
+                                        <div *ngIf="f.emailOrmobile.errors.required">Email is required</div>
                                     </div>
                                 </div>
                                 <div class="form-group required">
