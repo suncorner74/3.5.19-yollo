@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +9,8 @@ import { FooterComponent } from './common/footer/footer.component';
 import { HomeComponent } from './common/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {DialogModule} from 'primeng/dialog';
+import {TabViewModule} from 'primeng/tabview';
 import {InputTextModule} from 'primeng/inputtext';
 import { RegisterComponent } from './components/register/register.component';
 import {CheckboxModule} from 'primeng/checkbox';
@@ -25,7 +26,7 @@ import {FileUploadModule} from 'primeng/fileupload';
     RegisterComponent
   ],
   imports: [
-    NgbModule,
+    // NgbModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -34,7 +35,9 @@ import {FileUploadModule} from 'primeng/fileupload';
     HttpClientModule,
     InputTextModule,
     CheckboxModule,
-    FileUploadModule
+    FileUploadModule,
+    DialogModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

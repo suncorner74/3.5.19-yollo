@@ -4,10 +4,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class HeaderComponent implements OnInit {
-
+  display: boolean = false;
   closeResult: string;
   userDetails = null;
   constructor(private modalService: NgbModal) { }
@@ -21,9 +21,9 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
-  }
+  showDialog() {
+    this.display = true;
+}
 
   logout() {
     sessionStorage.clear();

@@ -1,88 +1,61 @@
-.login {
-    margin-top: -40px;
-}
 
-.nav-tabs .nav-link,
-.nav-tabs {
-    border: none;
-}
 
-.modal-header .close {
-    color: #26a69a;
-}
-
-.nav-tabs .nav-link.active {
-    border-bottom: 2px solid #26a69a;
-}
-
-.required label {
+.color-red {
     font-weight: bold;
+    color:#e32
 }
 
-.required label:after {
-    color: #e32;
-    content: ' *';
-    display: inline;
-}
 
-.nav-link {
-    display: block;
-    padding: .5rem 1.3rem;
+:host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a, :host ::ng-deep .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active a, body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active a, body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active a{
+    color:#000 !important;
 }
-
-.modal-dialog {
-    margin: 0;
+:host ::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active:hover, :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active{
+    border-width:0 0 2px 0;
+    border-color:#26a69a;
+    background-color: #fff !important;
 }
-
-.form {
-    margin-top: 30px;
-}
-
-.padding-lr {
-    padding-left: 20px;
-}
-
-.padding-right {
-    padding-right: 20px;
-}
-
-.margin-top-minus-32 {
-    margin-top: -32px;
-}
-
-.margin-top-50 {
-    margin-top: 50px
-}
-
-button:focus {
-    background: none;
-}
-
 .background-color {
     background: #26a69a;
-    position: relative;
-    left: -38px;
-    top: 0;
-    margin-bottom: -80px;
-    margin-top: -32px;
+    margin-top: -8px;
+    margin-left: -14px;
 }
-
-.btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.show>.btn-primary.dropdown-toggle {
-    background: #26a69a;
+:host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover{
+    background:#fff;
+    border:0;
 }
-
-.btn {
-    width: 303px;
-    height: 40px;
+:host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li{
+    background:#fff;
+    border:none;
 }
-
+:host::ng-deep .ui-tabview .ui-tabview-panels{
+    border:0;
+}
 ul li {
     list-style-type: none;
     margin: 30px 0 30px 10px;
 }
+h3{
+    padding-left: 10px;
+    color: #fff;
+}
 
-.color-red {
-    color: red
+
+.btn {
+    width: 263px;
+    height: 40px;
+    margin-top: 40px;
+}
+
+
+
+// .color-red {
+//     color: red
+// }
+:host ::ng-deep .ui-dialog .ui-dialog-content{
+    border:none;
+}
+:host::ng-deep.ui-dialog .ui-dialog-titlebar{
+    background: #fff;
+    padding: 5px;
+    border:none;
 }
