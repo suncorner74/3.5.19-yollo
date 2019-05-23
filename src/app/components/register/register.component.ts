@@ -16,7 +16,8 @@ export class RegisterComponent implements OnInit {
   getLoginSubscription = null;
   userDetetails = null;
   invalid = false;
-
+  val1: string;
+  val2: string = 'Provider';
   constructor(private formBuilder: FormBuilder,
     private userService: UserService) { }
 
@@ -29,6 +30,7 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       photoUpload: ['', Validators.required],
       panCard: ['', Validators.required],
+      role:['']
     });
   }
 

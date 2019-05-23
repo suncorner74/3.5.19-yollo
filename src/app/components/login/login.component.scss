@@ -1,10 +1,16 @@
-
-
+.form{
+    
+}
+.form-group{
+    min-height: 60px;
+}
 .color-red {
     font-weight: bold;
     color:#e32
 }
-
+.padding-tb-20{
+    padding-top:20px;
+}
 
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a, :host ::ng-deep .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active a, body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active a, body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active a{
     color:#000 !important;
@@ -17,7 +23,8 @@
 .background-color {
     background: #26a69a;
     margin-top: -8px;
-    margin-left: -14px;
+    position: relative;
+    left: -14px;
 }
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover{
     background:#fff;
@@ -29,6 +36,7 @@
 }
 :host::ng-deep .ui-tabview .ui-tabview-panels{
     border:0;
+    padding-left:0;
 }
 ul li {
     list-style-type: none;
@@ -37,17 +45,29 @@ ul li {
 h3{
     padding-left: 10px;
     color: #fff;
+    margin-top:20px;
 }
-
-
+:host::ng-deep.ui-float-label>input:focus ~ label, .ui-float-label>input.ui-state-filled ~ label, .ui-float-label>.ui-inputwrapper-focus ~ label, .ui-float-label>.ui-inputwrapper-filled ~ label{
+    top:5px;
+}
+:host::ng-deep.ui-inputtext:enabled:focus:not(.ui-state-error){
+    border-bottom :1px solid #26a69a;
+}
+:host::ng-deep.ui-inputtext:focus{
+    border:none;
+}
 .btn {
     width: 263px;
     height: 40px;
     margin-top: 40px;
 }
+:host::ng-deep .ui-inputtext.ng-dirty.ng-invalid, body p-dropdown.ng-dirty.ng-invalid > .ui-dropdown, body p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext, body p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext, body p-chips.ng-dirty.ng-invalid > .ui-inputtext, body p-inputmask.ng-dirty.ng-invalid > .ui-inputtext, body p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box, body p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box, body p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch, body p-listbox.ng-dirty.ng-invalid .ui-inputtext, body p-multiselect.ng-dirty.ng-invalid > .ui-multiselect, body p-spinner.ng-dirty.ng-invalid > .ui-inputtext, body p-selectbutton.ng-dirty.ng-invalid .ui-button, body p-togglebutton.ng-dirty.ng-invalid .ui-button{
+    border:none;
+}
 
-
-
+:host::ng-deep .ui-tabview.ui-tabview-top > .ui-tabview-nav li{
+top:-12px;
+}
 // .color-red {
 //     color: red
 // }
@@ -59,3 +79,8 @@ h3{
     padding: 5px;
     border:none;
 }
+
+:required {
+    background: red;
+    font-weight: 600;
+  }
