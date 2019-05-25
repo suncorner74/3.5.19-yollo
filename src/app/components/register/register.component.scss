@@ -155,6 +155,7 @@ textarea.materialize-textarea {
 
 .invalid-feedback{
     padding:20px 0;
+    color:#e32;
 }
 :host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error){
     border-bottom:1px solid #26a69a !important;
