@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import custom validator to validate that password and confirm password fields match
-// import { MustMatch } from './_helpers/must-match.validator';
+// import { MustMatch } from './_helpers/must-match.validator';\
+import { FileUploadModule } from 'primeng/fileupload';
 import { UserService } from './../../services/user.service'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class RegisterComponent implements OnInit {
   selectedValues: string[] = [];
@@ -18,6 +19,8 @@ export class RegisterComponent implements OnInit {
   invalid = false;
   val1: string;
   val2: string = 'Provider';
+  uploadedFiles: any[] = [];
+
   constructor(private formBuilder: FormBuilder,
     private userService: UserService) { }
 
@@ -28,9 +31,9 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      photoUpload: ['', Validators.required],
-      panCard: ['', Validators.required],
-      role:['']
+      // photoUpload: ['', Validators.required],
+      // panCard: ['', Validators.required],
+      role: ['',Validators.required]
     });
   }
 
@@ -59,7 +62,11 @@ export class RegisterComponent implements OnInit {
         console.log(`error: ${error}`);
       });
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
+  }
+  onUpload(event) {
+    for (let file of event.files) {
+      this.uploadedFiles.push(file);
+    }
   }
 }
 

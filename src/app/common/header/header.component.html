@@ -90,7 +90,7 @@
                                             <li><a href="#">Lorem</a></li>
                                         </ul>
                                     </li>
-                                    <li class="login-display-none" *ngIf="userDetails==null"><a href="#" id="login-btn" (click)="showDialog()">Log In /Sign UP</a></li>
+                                    <li class="login-display-none" *ngIf="userDetails==null"><a id="login-btn" (click)="showDialog()">Log In /Sign UP</a></li>
                                     <!-- <li class="login-display-none" *ngIf="userDetails"><a href="#" id="login-btn">{{userDetails.fname}}</a></li> -->
                                     <!-- <li class="login-display-none" *ngIf="userDetails"><a href="#" id="login-btn"  (click)="logout()">Logout</a></li> -->
                                     <li class="nav-dropdown" *ngIf="userDetails"> <i class="fa fa-chevron-down down-btn"></i> <a class="bold-nav" href="#">{{userDetails.username}}</a>
@@ -114,11 +114,9 @@
     </div>
 </header>
 
-    <p-dialog [showHeader] ="true"  [contentStyle]="{'max-height':'500'}" [(visible)]="display" [modal]="true" [responsive]="true" [minWidth]="800" >
+<p-dialog [showHeader]="true" [contentStyle]="{'max-height':'500'}" [(visible)]="display" [modal]="true" [responsive]="true" [minWidth]="800">
     <div class="model-body">
         <app-login></app-login>
-    </div> 
-        
+    </div>
+
 </p-dialog>
-
-

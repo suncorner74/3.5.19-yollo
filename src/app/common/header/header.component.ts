@@ -15,9 +15,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     let details = JSON.parse(sessionStorage.getItem('currentUser'));
 
-    if (details.user_level) {
-      this.userDetails = details;
-    }
+    // if (details.user_level) {
+    //   this.userDetails = details;
+    // }
 
   }
 
