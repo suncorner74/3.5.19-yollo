@@ -101,3 +101,7 @@ top:-12px;
 :host ::ng-deep.ui-tabview {
     min-height: 600px;
 }
+.invalid-feedback{
+    padding:20px 0;
+    color:#e32;
+}
