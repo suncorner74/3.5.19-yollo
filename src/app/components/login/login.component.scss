@@ -11,6 +11,10 @@
 .padding-tb-20{
     padding-top:20px;
 }
+.padding-lr{
+    padding-right: 15px;
+    padding-left:15px
+}
 :host::ng-deep .ui-button{
     background:#26a69a;
     width: 100%;

@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {FileUploadModule} from 'primeng/fileupload';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {AccordionModule} from 'primeng/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     FileUploadModule,
     DialogModule,
     TabViewModule,
-    RadioButtonModule
+    RadioButtonModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

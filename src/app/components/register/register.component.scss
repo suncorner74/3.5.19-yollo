@@ -152,3 +152,15 @@ textarea.materialize-textarea {
 .user-type-radio {
   margin-top: 20px;
 }
+
+.invalid-feedback{
+    padding:20px 0;
+}
+:host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error){
+    border-bottom:1px solid #26a69a !important;
+}
+:host ::ng-deep.ui-inputtext.ng-dirty.ng-invalid{
+    border-bottom:1px solid #26a69a !important;
+
+}
+   
