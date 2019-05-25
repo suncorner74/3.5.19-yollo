@@ -84,3 +84,6 @@ top:-12px;
     background: red;
     font-weight: 600;
   }
+:host ::ng-deep.ui-tabview {
+    min-height: 600px;
+}
