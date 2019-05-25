@@ -74,11 +74,11 @@
             <p class="color-gray">Type of User</p>
             <div class="user-type-radio">
                 <input id="user" type="radio" value="user" name="role" formControlName="role">
-                <label class="custom-control-label" for="user">user</label>
+                <label class="custom-control-label" for="user">Are you Looking for CA</label>
             </div>
             <div class="provider-type">
                 <input id="provider" type="radio" value="provider" name="role" formControlName="role">
-                <label class="custom-control-label" for="provider">provider</label>
+                <label class="custom-control-label" for="provider"> Tax Professional</label>
             </div>
             <!-- Showing error method -->
             <div *ngIf="isSubmitted && myForm.errors?.required">
