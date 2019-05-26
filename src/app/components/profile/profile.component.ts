@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   dateValue:any;
   selectedValues: string[] = ['basic','captialgain','foreignincome'];
+  selectedbuisnessValues:string[] = ['smallBusiness','mediumBusinsess','largeBusinsess'];
   constructor() { }
 
   ngOnInit() {

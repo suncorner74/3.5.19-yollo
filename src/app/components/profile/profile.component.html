@@ -1,7 +1,9 @@
 <div class="container">
+ 
     <form action="">
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
+                    <h2 class="font-22">Update Profile</h2>
                 <div class="form-group ui-g-12 ui-md-6 ui-6 padding-left-0">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30"
@@ -19,7 +21,7 @@
                     <label for="">Image</label>
                 </div>
             </div>
-            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15">
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-right-15">
                 <div class="form-group">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="email" type="text" size="30"
@@ -50,7 +52,7 @@
             </div>
         </div>
         <div class="ui-g">
-            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15">
+            <div class="ui-g-12 ui-md-6 ui-lg-4  padding-right-15">
                 <div class="form-group ">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="panCard" type="text" size="30"
@@ -104,25 +106,73 @@
                             <input id="buisness" type="radio" value="4" name="type" formControlName="type">
                             <label class="custom-control-label" for="buisness"> Buisness Owner</label>
                         </div>
-                      
+
                     </div>
 
                 </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues" inputId="ny">
+                    <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues" inputId="bs">
                     </p-checkbox>
                 </div>
                 <div class="ui-g-12">
                     <p-checkbox name="group1" value="captialgain" label="Basic with Capital Gain"
-                        [(ngModel)]="selectedValues" inputId="sf"></p-checkbox>
+                        [(ngModel)]="selectedValues" inputId="bcg"></p-checkbox>
                 </div>
                 <div class="ui-g-12">
                     <p-checkbox name="group1" value="foreignincome" label="Basic with Foreign income"
-                        [(ngModel)]="selectedValues" inputId="la"></p-checkbox>
+                        [(ngModel)]="selectedValues" inputId="bfi"></p-checkbox>
                 </div>
-                
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="smallBusiness" label="Small Buisness "
+                        [(ngModel)]="selectedbuisnessValues" inputId="sb">
+                    </p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="mediumBusinsess" label="Medium Buinsess"
+                        [(ngModel)]="selectedbuisnessValues" inputId="mb"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="largeBusinsess" label="Large Buinsess"
+                        [(ngModel)]="selectedbuisnessValues" inputId="lb"></p-checkbox>
+                </div>
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="gst" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                        <label for="float-input">GST Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                        <div *ngIf="f.gst.errors.required">gst is required</div>
+                        <div *ngIf="f.gst.errors.gst">Please enter valid GST Number</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+                    <div class="form-group ">
+                            <div class="ui-float-label">
+                                <input class="form-control" id="float-input" formControlName="reg" type="text" size="30"
+                                    pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
+                                <label for="float-input">Registration Id
+                                    <span class="color-red">*</span>
+                                </label>
+                            </div>
+                            <div *ngIf="submitted && f.reg.errors" class="invalid-feedback">
+                                <div *ngIf="f.reg.errors.required">gst is required</div>
+                                <div *ngIf="f.reg.errors.reg">Please enter registration Number</div>
+                            </div>
+        
+                        </div>
             </div>
         </div>
     </form>
