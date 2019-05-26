@@ -1,5 +1,129 @@
 <div class="container">
-  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-  on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw
-  denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    <form action="">
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
+                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-left-0">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+                        <label for="float-input">First Name
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">Full Name is required</div>
+                    </div>
+
+                </div>
+                <div class="form-group ui-g-12 ui-md-6 ui-6  padding-top-50 padding-left-15">
+                    <label for="">Image</label>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15">
+                <div class="form-group">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="email" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <label for="float-input">Email Id
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 ">
+                <div class="form-group">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="phoneNumber" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                        <label for="float-input">Phone Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="panCard" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.panCard.errors }" />
+                        <label for="float-input">Pancard Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.panCard.errors" class="invalid-feedback">
+                        <div *ngIf="f.panCard.errors.required">Pancard is required</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="dateOfBirth" type="text" size="30"
+                            pInputText />
+                        <label for="float-input">Date Of Birth(optional)
+
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="form-group ">
+                    <label for=""> which type of user you are ?</label>
+                    <div class="user-option">
+                        <div class="user-type-radio ">
+                            <input id="salaried" type="radio" value="0" name="type" formControlName="type">
+                            <label class="custom-control-label" for="salaried">Salaried</label>
+                        </div>
+                        <div class="provider-type padding-lr-15">
+                            <input id="provider" type="radio" value="1" name="type" formControlName="type">
+                            <label class="custom-control-label" for="provider"> Professionals/Freelancers</label>
+                        </div>
+                        <div class="trader-type padding-lr-15">
+                            <input id="Traders" type="radio" value="2" name="type" formControlName="type">
+                            <label class="custom-control-label" for="Traders"> Traders</label>
+                        </div>
+                        <div class="Startup-type padding-lr-15">
+                            <input id="Startup" type="radio" value="3" name="type" formControlName="type">
+                            <label class="custom-control-label" for="Startup"> Startup</label>
+                        </div>
+                        <div class="Startup-type padding-lr-15">
+                            <input id="buisness" type="radio" value="4" name="type" formControlName="type">
+                            <label class="custom-control-label" for="buisness"> Buisness Owner</label>
+                        </div>
+                      
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues" inputId="ny">
+                    </p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="captialgain" label="Basic with Capital Gain"
+                        [(ngModel)]="selectedValues" inputId="sf"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="foreignincome" label="Basic with Foreign income"
+                        [(ngModel)]="selectedValues" inputId="la"></p-checkbox>
+                </div>
+                
+            </div>
+        </div>
+    </form>
 </div>

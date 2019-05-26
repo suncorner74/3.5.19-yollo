@@ -1,0 +1,29 @@
+.padding-top-50{
+    padding-top:50px;
+}
+.ui-g{
+    display: block;
+}
+.padding-left-0{
+    padding-left:0px
+}
+.padding-right-15{
+    padding-right:15px;
+}
+.padding-left-15{
+    padding-left:15px;
+}
+.padding-top-20{
+    padding-top:20px;
+}
+.user-option {
+    display: inline-flex;
+    padding-left: 25px;
+}
+.padding-lr-15{
+padding: 0 15px;
+}
+:host::ng-deep.ui-chkbox .ui-chkbox-box.ui-state-active{
+    border-color: #26a69a !important;
+    background-color: #26a69a !important;
+}

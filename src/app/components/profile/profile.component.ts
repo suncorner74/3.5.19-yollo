@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+  dateValue:any;
+  selectedValues: string[] = ['basic','captialgain','foreignincome'];
   constructor() { }
 
   ngOnInit() {
