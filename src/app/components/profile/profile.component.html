@@ -1,9 +1,9 @@
 <div class="container">
- 
+
     <form action="">
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
-                    <h2 class="font-22">Update Profile</h2>
+                <h2 class="font-22">Update Profile</h2>
                 <div class="form-group ui-g-12 ui-md-6 ui-6 padding-left-0">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30"
@@ -81,10 +81,11 @@
             </div>
 
         </div>
+        
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
                 <div class="form-group ">
-                    <label for=""> which type of user you are ?</label>
+                    <label for="" class="radio-label"> which type of user you are ?</label>
                     <div class="user-option">
                         <div class="user-type-radio ">
                             <input id="salaried" type="radio" value="0" name="type" formControlName="type">
@@ -159,20 +160,20 @@
                 </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
-                    <div class="form-group ">
-                            <div class="ui-float-label">
-                                <input class="form-control" id="float-input" formControlName="reg" type="text" size="30"
-                                    pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
-                                <label for="float-input">Registration Id
-                                    <span class="color-red">*</span>
-                                </label>
-                            </div>
-                            <div *ngIf="submitted && f.reg.errors" class="invalid-feedback">
-                                <div *ngIf="f.reg.errors.required">gst is required</div>
-                                <div *ngIf="f.reg.errors.reg">Please enter registration Number</div>
-                            </div>
-        
-                        </div>
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="reg" type="text" size="30"
+                            pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
+                        <label for="float-input">Registration Id
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.reg.errors" class="invalid-feedback">
+                        <div *ngIf="f.reg.errors.required">gst is required</div>
+                        <div *ngIf="f.reg.errors.reg">Please enter registration Number</div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </form>
