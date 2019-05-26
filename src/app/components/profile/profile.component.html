@@ -3,8 +3,8 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
-                <h2 class="font-22">Update Profile</h2>
-                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-left-0">
+                <h2 class="font-22 update">Update Profile</h2>
+                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-top-30 padding-left-0">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="firstName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                         <label for="float-input">First Name
@@ -79,8 +79,23 @@
 
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="form-group">
+                     <label for="" class="radio-label"> Gender</label>
+                        <div class="user-option">
+                                <div class="user-type-radio ">
+                                    <input id="male" type="radio" value="0" (click)="gender($event)" formControlName="gender">
+                                    <label class="custom-control-label" for="male">Male</label>
+                                </div>
+                                <div class="provider-type padding-lr-15">
+                                    <input id="Female" type="radio" value="1" formControlName="gender">
+                                    <label class="custom-control-label" for="Female"> Female</label>
+                                </div>
+                </div>
+            </div>
+             </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
                 <div class="form-group ">
-                    <label for="" class="radio-label"> which type of user you are ?</label>
+                    <label for="" class="radio-label"> Which type of user you are ?</label>
                     <div class="user-option">
                         <div class="user-type-radio ">
                             <input id="salaried" type="radio" value="0" (click)="salryType($event)" formControlName="userType">
@@ -107,6 +122,7 @@
 
                 </div>
             </div>
+           
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0" *ngIf="salaryType">
                 <div class="ui-g-12">
                     <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues1" formControlName="salryType" inputId="bs">
@@ -163,6 +179,26 @@
 
                 </div>
             </div>
+           
+           <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+            <div class="form-group ">
+                <div class="ui-float-label">
+                    <input class="form-control" id="float-input" formControlName="firmName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firmName.errors }" />
+                    <label for="float-input">Business or Firm Name
+                        <span class="color-red">*</span>
+                    </label>
+                </div>
+                <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                    <div *ngIf="f.firmName.errors.required">gst is required</div>
+                    <div *ngIf="f.firmName.errors.firmName">Please enter valid GST Number</div>
+                </div>
+
+            </div>
+           </div>
+        </div>
+        <div class="margin-tb-30">
+            <button pButton type="button" label="Update" (click)="handleClick($event)"></button>
+            <button class="ui-button cancel-btn" pButton type="button" label="Cancel" (click)="handleClick($event)"></button>
         </div>
     </form>
 </div>

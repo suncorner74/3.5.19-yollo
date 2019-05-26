@@ -23,10 +23,12 @@ export class ProfileComponent implements OnInit {
       pancard: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
       userType: ['', Validators.required],
+      gender:[''],
       salryType:[''],
       businesstype:[''],
       gst:[''],
-      reg:['']
+      reg:[''],
+      firmName:['',Validators.required]
     });
   }
 
