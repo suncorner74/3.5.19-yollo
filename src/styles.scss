@@ -10,3 +10,7 @@
 {
     color:#fff;
 }
+
+:host ::ng-deep input[type=text]:not(.browser-default):focus:not([readonly]){
+    border-bottom:1px solid #26a69a;
+}

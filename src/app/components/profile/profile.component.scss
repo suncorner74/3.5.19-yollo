@@ -1,0 +1,67 @@
+.padding-top-50 {
+  padding-top: 50px;
+}
+.ui-g {
+  display: block;
+}
+.padding-left-0 {
+  padding-left: 0px;
+}
+.padding-right-15 {
+  padding-right: 15px;
+}
+.padding-left-15 {
+  padding-left: 15px;
+}
+.padding-top-20 {
+  padding-top: 20px;
+}
+.user-option {
+  display: inline-flex;
+  padding-left: 25px;
+}
+.padding-lr-15 {
+  padding: 0 15px;
+}
+:host::ng-deep.ui-chkbox .ui-chkbox-box.ui-state-active {
+  border-color: #26a69a !important;
+  background-color: #26a69a !important;
+}
+.color-red {
+  color: red;
+}
+
+.radio-label{
+padding-left:10px;
+}
+.update{
+    padding-bottom: 30px;
+    padding-top: 39px;
+    border-bottom: 2px solid #26a69a;
+}
+.padding-top-30{
+  padding-top:30px;
+}
+:host::ng-deep .ui-button {
+  padding: 6px 50px;
+  margin: 0;
+  color: #ffffff;
+  background-color: #26a69a;
+  border: 1px solid #26a69a;
+  font-size: 14px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+:host::ng-deep .ui-button:enabled:active, :host::ng-deep .ui-button:enabled:hover{
+
+ background-color: #26a69a;
+  border: 1px solid #26a69a;
+}
+:host::ng-deep button.ui-button.cancel-btn.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only{
+  background: white;
+  color: #26a69a;
+  margin-left: 20px;
+}
+.margin-tb-30{
+  margin-top:30px;
+  margin-bottom:30px;
+}

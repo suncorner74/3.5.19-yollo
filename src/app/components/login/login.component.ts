@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  encapsulation:ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class LoginComponent implements OnInit {
 
@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = null;
   invalid = false;
+  emailOrNot: boolean;
 
   constructor(
     private userService: UserService,
@@ -40,7 +41,12 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    this.getLoginSubscription = this.userService.login(this.loginForm.value)
+    var email = this.loginForm.value.emailOrmobile;
+    var index = email.indexOf("@");
+    if (index) {
+      this.emailOrNot = true;
+    }
+    this.getLoginSubscription = this.userService.login(this.loginForm.value, this.emailOrNot)
       .subscribe((resp) => {
         this.userDetetails = Object.assign({}, resp);
         // this.router.navigateByUrl('/');
@@ -52,7 +58,7 @@ export class LoginComponent implements OnInit {
 
       }, (error) => {
         this.invalid = true;
-         console.log(`error: ${error}`);
+        console.log(`error: ${error}`);
       });
   }
 

@@ -1,25 +1,25 @@
 <div class="form ">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <span class="ui-float-label">
-                <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30" pInputText
-                    [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+            <div class="ui-float-label">
+                <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <label for="float-input">Full Name
                     <span class="color-red">*</span>
                 </label>
-            </span>
+
+            </div>
             <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
                 <div *ngIf="f.fullName.errors.required">Full Name is required</div>
             </div>
         </div>
         <div class="form-group">
-            <span class="ui-float-label">
-                <input class="form-control" id="float-input" formControlName="email" type="text" size="30"
-                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
+            <div class="ui-float-label">
+                <input class="form-control" id="float-input" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
                 <label for="float-input">Email Address
                     <span class="color-red">*</span>
                 </label>
-            </span>
+
+            </div>
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -27,61 +27,67 @@
         </div>
 
         <div class="form-group">
-            <span class="ui-float-label">
-                <input type="password" formControlName="password" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" pInputText />
+            <div class="ui-float-label">
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" pInputText />
                 <label for="float-input">Password
                     <span class="color-red">*</span>
                 </label>
-            </span>
+
+            </div>
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
             </div>
         </div>
         <div class="form-group">
-            <span class="ui-float-label">
-                <input type="password" formControlName="confirmPassword" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" pInputText />
+            <div class="ui-float-label">
+                <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" pInputText />
                 <label for="float-input">Confirm Password
                     <span class="color-red">*</span>
                 </label>
-            </span>
+
+            </div>
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
             </div>
         </div>
         <div class="form-group">
-            <span class="ui-float-label">
-                <input type="text" formControlName="phoneNumber" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
+            <div class="ui-float-label">
+                <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
                 <label for="float-input">Phone Number
                     <span class="color-red">*</span>
                 </label>
-            </span>
+
+            </div>
             <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
                 <div *ngIf="f.phoneNumber.errors.required">Phone number is required</div>
                 <div *ngIf="f.phoneNumber.errors.mustMatch">Please enter valid phone number</div>
             </div>
         </div>
+        <!-- <div class="form-group">
+            <p-fileUpload mode="basic" name="demo[]" url="" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
+
+        </div> -->
+
         <div class="form-group">
             <p class="color-gray">Type of User</p>
             <div class="user-type-radio">
-                <input id="user" type="radio" value="user" name="role" formControlName="role">
-                <label class="custom-control-label" for="user">user</label>
+                <input id="user" type="radio" value="0" name="role" formControlName="role">
+                <label class="custom-control-label" for="user">Are you Looking for CA</label>
             </div>
             <div class="provider-type">
-                <input id="provider" type="radio" value="provider" name="role" formControlName="role">
-                <label class="custom-control-label" for="provider">provider</label>
+                <input id="provider" type="radio" value="1" name="role" formControlName="role">
+                <label class="custom-control-label" for="provider"> Tax Professional</label>
             </div>
             <!-- Showing error method -->
-            <div *ngIf="isSubmitted && myForm.errors?.required">
-                <p>Please select either value</p>
+            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                <div *ngIf="f.role.errors.required">Please select either value</div>
             </div>
+
         </div>
-        <div class="margin-top-20">
-                <button pButton type="button" label="Register" (click)="handleClick($event)"></button>
+        <div class="margin-top-20 ">
+            <button class="ui-button" pButton type="button" label="Register" (click)="onSubmit($event)"></button>
         </div>
     </form>
 </div>

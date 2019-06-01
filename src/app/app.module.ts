@@ -9,6 +9,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { HomeComponent } from './common/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 import {DialogModule} from 'primeng/dialog';
 import {TabViewModule} from 'primeng/tabview';
 import {InputTextModule} from 'primeng/inputtext';
@@ -16,6 +17,9 @@ import { RegisterComponent } from './components/register/register.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import {FileUploadModule} from 'primeng/fileupload';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {AccordionModule} from 'primeng/accordion';
+import {CalendarModule} from 'primeng/calendar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     // NgbModule,
@@ -38,7 +43,9 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     FileUploadModule,
     DialogModule,
     TabViewModule,
-    RadioButtonModule
+    RadioButtonModule,
+    AccordionModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

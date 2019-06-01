@@ -1,0 +1,204 @@
+<div class="container">
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
+                <h2 class="font-22 update">Update Profile</h2>
+                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-top-30 padding-left-0">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="firstName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+                        <label for="float-input">First Name
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">Full Name is required</div>
+                    </div>
+
+                </div>
+                <div class="form-group ui-g-12 ui-md-6 ui-6  padding-top-50 padding-left-15">
+                    <label for="">Image</label>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-right-15">
+                <div class="form-group">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="email" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <label for="float-input">Email Id
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 ">
+                <div class="form-group">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="phoneNumber" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                        <label for="float-input">Phone Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-4  padding-right-15">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="pancard" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.pancard.errors }" />
+                        <label for="float-input">Pancard Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.pancard.errors" class="invalid-feedback">
+                        <div *ngIf="f.pancard.errors.required">Pancard is required</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="dateOfBirth" type="text" size="30" pInputText />
+                        <label for="float-input">Date Of Birth(optional)
+
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="form-group">
+                     <label for="" class="radio-label"> Gender</label>
+                        <div class="user-option">
+                                <div class="user-type-radio ">
+                                    <input id="male" type="radio" value="0" (click)="gender($event)" formControlName="gender">
+                                    <label class="custom-control-label" for="male">Male</label>
+                                </div>
+                                <div class="provider-type padding-lr-15">
+                                    <input id="Female" type="radio" value="1" formControlName="gender">
+                                    <label class="custom-control-label" for="Female"> Female</label>
+                                </div>
+                </div>
+            </div>
+             </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
+                <div class="form-group ">
+                    <label for="" class="radio-label"> Which type of user you are ?</label>
+                    <div class="user-option">
+                        <div class="user-type-radio ">
+                            <input id="salaried" type="radio" value="0" (click)="salryType($event)" formControlName="userType">
+                            <label class="custom-control-label" for="salaried">Salaried</label>
+                        </div>
+                        <div class="provider-type padding-lr-15">
+                            <input id="provider" type="radio" value="1" formControlName="userType">
+                            <label class="custom-control-label" for="provider"> Professionals/Freelancers</label>
+                        </div>
+                        <div class="trader-type padding-lr-15">
+                            <input id="Traders" type="radio" value="2" formControlName="userType">
+                            <label class="custom-control-label" for="Traders"> Traders</label>
+                        </div>
+                        <div class="Startup-type padding-lr-15">
+                            <input id="Startup" type="radio" value="3" formControlName="userType">
+                            <label class="custom-control-label" for="Startup"> Startup</label>
+                        </div>
+                        <div class="Startup-type padding-lr-15">
+                            <input id="buisness" type="radio" value="4" (click)="buisnessType($event)">
+                            <label class="custom-control-label" for="buisness"> Buisness Owner</label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+           
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0" *ngIf="salaryType">
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues1" formControlName="salryType" inputId="bs">
+                    </p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="captialgain" label="Basic with Capital Gain" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bcg"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="foreignincome" label="Basic with Foreign income" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bfi"></p-checkbox>
+                </div>
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0" *ngIf="buisnessCheck">
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="smallBusiness" label="Small Buisness " [(ngModel)]="selectedbuisnessValues1" formControlName="businesstype" inputId="sb">
+                    </p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="mediumBusinsess" label="Medium Buinsess" [(ngModel)]="selectedbuisnessValues2" formControlName="businesstype" inputId="mb"></p-checkbox>
+                </div>
+                <div class="ui-g-12">
+                    <p-checkbox name="group1" value="largeBusinsess" label="Large Buinsess" [(ngModel)]="selectedbuisnessValues3" formControlName="businesstype" inputId="lb"></p-checkbox>
+                </div>
+
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15" *ngIf="buisnessCheck">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="gst" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                        <label for="float-input">GST Number
+                            <span class="color-red">*</span>
+                        </label>
+                    </div>
+                    <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                        <div *ngIf="f.gst.errors.required">gst is required</div>
+                        <div *ngIf="f.gst.errors.gst">Please enter valid GST Number</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15" *ngIf="buisnessCheck">
+                <div class="form-group ">
+                    <div class="ui-float-label">
+                        <input class="form-control" id="float-input" formControlName="reg" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
+                        <label for="float-input">Registration Id
+                                    <span class="color-red">*</span>
+                                </label>
+                    </div>
+                    <div *ngIf="submitted && f.reg.errors" class="invalid-feedback">
+                        <div *ngIf="f.reg.errors.required">gst is required</div>
+                        <div *ngIf="f.reg.errors.reg">Please enter registration Number</div>
+                    </div>
+
+                </div>
+            </div>
+           
+           <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+            <div class="form-group ">
+                <div class="ui-float-label">
+                    <input class="form-control" id="float-input" formControlName="firmName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firmName.errors }" />
+                    <label for="float-input">Business or Firm Name
+                        <span class="color-red">*</span>
+                    </label>
+                </div>
+                <div *ngIf="submitted && f.gst.errors" class="invalid-feedback">
+                    <div *ngIf="f.firmName.errors.required">gst is required</div>
+                    <div *ngIf="f.firmName.errors.firmName">Please enter valid GST Number</div>
+                </div>
+
+            </div>
+           </div>
+        </div>
+        <div class="margin-tb-30">
+            <button pButton type="button" label="Update" (click)="handleClick($event)"></button>
+            <button class="ui-button cancel-btn" pButton type="button" label="Cancel" (click)="handleClick($event)"></button>
+        </div>
+    </form>
+</div>

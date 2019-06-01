@@ -9,13 +9,17 @@ import { map } from 'rxjs/operators';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-
-  login(user) {
+  login(user, emailOrNot) {
+    var userDetail = {
+      emailOrNumber: user.emailOrmobile,
+      password: user.password,
+      emailOrNot: emailOrNot
+    }
     let url: string = `http://localhost:3000/users/login`;
     return this.http.post<any>(url, user)
       .pipe(map(user => {
         if (user) {
-          sessionStorage.setItem('currentUser', JSON.stringify(user));
+          sessionStorage.setItem('currentUser', JSON.stringify(userDetail));
         }
         return user;
       }));

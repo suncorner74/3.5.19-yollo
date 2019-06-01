@@ -63,20 +63,21 @@
                                 </div>
                             </div>
                             
-                            <div class="form-group padding-tb-20">
-                                    <span class="padding-right"><a href="">Forget password</a></span>
+                            <div class="form-group padding-tb-20 text-center">
+                                    <span class="padding-lr"><a href="">Forget password</a></span>
                                     <span> | </span>
-                                    <span class="padding-lr"><a href="">Other Login Issue</a></span>
+                                    <span class="padding-lr"><a href="" (click)="showDIV">Other Login Issue</a></span>
 
                                 </div>
+                               
                                 <!-- <div class="form-group"> <span>By Logging in you in agree to your terms and condition and privacy policy</span></div> -->
                                 <div class="form-group margin-top-50 text-center">
-                                    <button class="btn btn-primary " (click)="getLogin($event)">Login</button>
+                                    <button class="ui-button" pButton (click)="getLogin($event)" label ="Login"></button>
                                 </div>
                         </div>
                     </form>
 
-
+                  
                 </p-tabPanel>
                 <p-tabPanel header="Sign Up">
                     <app-register></app-register>
