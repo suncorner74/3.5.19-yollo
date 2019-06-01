@@ -31,8 +31,6 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      // photoUpload: ['', Validators.required],
-      // panCard: ['', Validators.required],
       role: ['',Validators.required]
     });
   }
@@ -41,7 +39,7 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    
+
     this.submitted = true;
 
     // stop here if form is invalid
