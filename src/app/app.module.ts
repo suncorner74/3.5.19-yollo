@@ -19,6 +19,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {AccordionModule} from 'primeng/accordion';
 import {CalendarModule} from 'primeng/calendar';
+import { CustomValidator } from './_helpers/customValidator';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import {CalendarModule} from 'primeng/calendar';
     AccordionModule,
     CalendarModule
   ],
-  providers: [],
+  providers: [CustomValidator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

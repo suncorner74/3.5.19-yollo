@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidator } from 'src/app/_helpers/customValidator';
+import { UserProfileService } from 'src/app/services/user-profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,15 +15,18 @@ export class ProfileComponent implements OnInit {
   salaryType = false;
   buisnessCheck = false;
   submitted: boolean;
+  getUpdateSubscription: any;
+  userDetetails: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private customValidator: CustomValidator,
+    private userProfile: UserProfileService) { }
 
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
-      pancard: ['', Validators.required, CustomValidator.pancard],
+      firstName: ['', Validators.required,this.customValidator.alphaNumericValidator],
+      email: ['', [Validators.required, this.customValidator.emailValidator]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10), this.customValidator.numericValidator]],
+      pancard: ['', [Validators.required, this.customValidator.panValidator]],
       dateOfBirth: ['', Validators.required],
       userType: ['', Validators.required],
       gender: ['', Validators.required],
@@ -30,7 +34,7 @@ export class ProfileComponent implements OnInit {
       businesstype: [''],
       gst: [''],
       reg: [''],
-      firmName:['']
+      firmName: ['']
     });
   }
   get f() { return this.profileForm.controls; }
@@ -65,15 +69,25 @@ export class ProfileComponent implements OnInit {
     if (this.profileForm.invalid) {
       return;
     }
-  }
 
-  hideDetail(){
-    this.salaryType = false;
-    this.buisnessCheck = false;
-    this.profileForm.get('businesstype').clearValidators();
-    this.profileForm.get('gst').clearValidators();
-    this.profileForm.get('reg').clearValidators();
-    this.profileForm.get('firmName').clearValidators();
-    this.profileForm.get('businesstype').clearValidators();
-  }
+    this.getUpdateSubscription = this.userProfile.update(this.profileForm.value)
+      .subscribe((resp) => {
+        this.userDetetails = Object.assign({}, resp);
+
+      }, (error) => {
+        console.log(`error: ${error}`);
+      });
+
+
+}
+
+hideDetail(){
+  this.salaryType = false;
+  this.buisnessCheck = false;
+  this.profileForm.get('businesstype').clearValidators();
+  this.profileForm.get('gst').clearValidators();
+  this.profileForm.get('reg').clearValidators();
+  this.profileForm.get('firmName').clearValidators();
+  this.profileForm.get('businesstype').clearValidators();
+}
 }
