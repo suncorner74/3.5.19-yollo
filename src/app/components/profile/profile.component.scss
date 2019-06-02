@@ -103,3 +103,24 @@ input:-internal-autofill-selected{
 input{
   background: #FFFFFF;
 }
+:host::ng-deep.ui-fileupload .ui-fileupload-buttonbar{
+    background:none;
+    border:none;
+}
+:host::ng-deep.ui-fileupload .ui-fileupload-content{
+    border:none;
+}
+:host::ng-deep.ui-progressbar{
+    border:none;
+    display:none;
+}
+:host::ng-deep.ui-fileupload.ui-widget.ng-star-inserted {
+    position: relative;
+    top: 21px;
+    left: 60px;
+}
+:host ::ng-deep .ui-fileupload-row {
+    position: relative;
+    top: -140px;
+    display:block;
+}

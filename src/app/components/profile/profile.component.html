@@ -4,7 +4,7 @@
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
                 <h2 class="font-22 ">Update user Profile</h2>
-                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-top-30 padding-left-0">
+                <div class="form-group ui-g-12 ui-md-6 ui-lg-6  padding-top-30 padding-left-0">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="firstName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                         <label for="float-input">Name
@@ -19,11 +19,9 @@
 
                 </div>
 
-            </div>
-            <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
-                <div class="form-group ui-g-12 ui-md-6 ui-6 padding-top-30 padding-left-0">
-                    <h3 class="first">Advanced</h3>
-                    <p-fileUpload name="demo[]" url="./" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000">
+            <div class="ui-g-12 ui-md-6 ui-lg-6 ">
+                <div class="form-group  ">
+                    <p-fileUpload name="demo[]" url="./" [showCancelButton]="false" [showUploadButton]="false" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000">
                         <ng-template pTemplate="content">
                             <ul *ngIf="uploadedFiles.length">
                                 <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
@@ -32,6 +30,7 @@
                     </p-fileUpload>
                 </div>
 
+            </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-right-15">
                 <div class="form-group">
