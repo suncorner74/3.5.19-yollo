@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit {
   submitted = null;
   invalid = false;
   emailOrNot: boolean;
+  otherLoginIssue = null;
 
   constructor(
     private userService: UserService,
     private fb: FormBuilder,
     private router: Router) {
     this.userDetetails = null;
+    this.otherLoginIssue = true
   }
 
   ngOnInit() {
@@ -67,6 +69,10 @@ export class LoginComponent implements OnInit {
     if (this.getLoginSubscription) {
       this.getLoginSubscription.unsubscribe()
     }
+  }
+
+  showDIV($evnet){
+    this.otherLoginIssue=false;
   }
 
 }

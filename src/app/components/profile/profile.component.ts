@@ -17,13 +17,15 @@ export class ProfileComponent implements OnInit {
   submitted: boolean;
   getUpdateSubscription: any;
   userDetetails: any;
+  uploadedFiles: any[] = [];
 
   constructor(private formBuilder: FormBuilder, private customValidator: CustomValidator,
-    private userProfile: UserProfileService) { }
+    private userProfile: UserProfileService,
+   ) { }
 
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
-      firstName: ['', Validators.required,this.customValidator.alphaNumericValidator],
+      firstName: ['', Validators.required, this.customValidator.alphaNumericValidator],
       email: ['', [Validators.required, this.customValidator.emailValidator]],
       phoneNumber: ['', [Validators.required, Validators.minLength(10), this.customValidator.numericValidator]],
       pancard: ['', [Validators.required, this.customValidator.panValidator]],
@@ -79,15 +81,23 @@ export class ProfileComponent implements OnInit {
       });
 
 
-}
+  }
 
-hideDetail(){
-  this.salaryType = false;
-  this.buisnessCheck = false;
-  this.profileForm.get('businesstype').clearValidators();
-  this.profileForm.get('gst').clearValidators();
-  this.profileForm.get('reg').clearValidators();
-  this.profileForm.get('firmName').clearValidators();
-  this.profileForm.get('businesstype').clearValidators();
-}
+  hideDetail() {
+    this.salaryType = false;
+    this.buisnessCheck = false;
+    this.profileForm.get('businesstype').clearValidators();
+    this.profileForm.get('gst').clearValidators();
+    this.profileForm.get('reg').clearValidators();
+    this.profileForm.get('firmName').clearValidators();
+    this.profileForm.get('businesstype').clearValidators();
+  }
+
+  onUpload(event) {
+    for (let file of event.files) {
+      this.uploadedFiles.push(file);
+    }
+
+    // this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });
+  }
 }
