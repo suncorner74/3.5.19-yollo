@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import custom validator to validate that password and confirm password fields match
 // import { MustMatch } from './_helpers/must-match.validator';\
@@ -11,6 +11,7 @@ import { UserService } from './../../services/user.service'
   encapsulation: ViewEncapsulation.Emulated
 })
 export class RegisterComponent implements OnInit {
+  @Input() display :boolean = false;
   selectedValues: string[] = [];
   registerForm: FormGroup;
   submitted = false;
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['',Validators.required,Validators.minLength(10)],
       role: ['',Validators.required]
     });
   }

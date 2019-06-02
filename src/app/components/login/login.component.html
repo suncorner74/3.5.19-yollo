@@ -83,10 +83,14 @@
                 </p-tabPanel>
 
             </p-tabView>
-
+                
         </div>
-        <div class="ui-g-12 ui-md-6 ui-lg-6" *ngIf="!otherLoginIssue">
-
+        <div class="ui-g-12 ui-md-6 ui-lg-6 min-height-400" *ngIf="!otherLoginIssue">
+                <p-accordion>
+                        <p-accordionTab header="Contact Us">
+                        <div>other login issue</div>
+                        </p-accordionTab>
+                </p-accordion>
         </div>
     </div>
 </div>

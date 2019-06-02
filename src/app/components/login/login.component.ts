@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class LoginComponent implements OnInit {
-
+  display:boolean =true;s
   getLoginSubscription = null;
   userDetetails = null;
   loginForm: FormGroup;
