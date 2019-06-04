@@ -2,7 +2,7 @@
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <div class="ui-float-label">
-                <input class="form-control" id="float-input" formControlName="fullName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
+                <input class="form-control"  formControlName="fullName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <label for="float-input">Full Name
                     <span class="color-red">*</span>
                 </label>
@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <div class="ui-float-label">
-                <input class="form-control" id="float-input" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
+                <input class="form-control"  formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
                 <label for="float-input">Email Address
                     <span class="color-red">*</span>
                 </label>

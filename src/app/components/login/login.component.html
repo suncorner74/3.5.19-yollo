@@ -37,7 +37,8 @@
                         <div clas="form">
                             <div class="form-group">
                                 <div class="ui-float-label">
-                                    <input class="form-control" id="float-input" formControlName="emailOrmobile" type="text" size="30" pInputText required>
+                                    <input class="form-control" formControlName="emailOrmobile" type="text" size="30"
+                                        pInputText required>
                                     <label for="float-input">Registered email id or Mobile Number <span
                                             class="color-red">*</span></label>
                                 </div>
@@ -47,7 +48,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="ui-float-label ">
-                                    <input class="form-control" id="float-input" formControlName="password" type="text" size="8" pInputText required>
+                                    <input class="form-control" formControlName="password" type="text" size="8"
+                                        pInputText required>
                                     <label for="float-input">Password <span class="color-red">*</span></label>
                                 </div>
                                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -64,7 +66,7 @@
                             <div class="form-group padding-tb-20 text-center">
                                 <span class="padding-lr"><a href="">Forget password</a></span>
                                 <span> | </span>
-                                <span class="padding-lr"><a  (click)="showDIV($event)">Other Login Issue</a></span>
+                                <span class="padding-lr"><a (click)="showDIV($event)">Other Login Issue</a></span>
 
                             </div>
 
@@ -83,14 +85,44 @@
                 </p-tabPanel>
 
             </p-tabView>
-                
+
         </div>
-        <div class="ui-g-12 ui-md-6 ui-lg-6 min-height-400" *ngIf="!otherLoginIssue">
-                <p-accordion>
-                        <p-accordionTab header="Contact Us">
-                        <div>other login issue</div>
-                        </p-accordionTab>
-                </p-accordion>
+        <div class="ui-g-6 min-height-400" *ngIf="!otherLoginIssue">
+            <p-accordion>
+                <p-accordionTab header="Contact Us">
+                    <form class="form"  [formGroup]="contactUsForm">
+                        <div class="form-group">
+                            <div class="ui-float-label">
+                                <input class="form-control" formControlName="email" type="text"
+                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
+                                <label for="float-input">Registered email Id
+                                    
+                                </label>
+                            </div>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="ui-float-label">
+                                    <input type="text" formControlName="phoneNumber"  [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
+                                    <label for="float-input">Phone Number
+                                    </label>
+                    
+                             </div>
+                                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phoneNumber.errors.required">Phone number is required</div>
+                                    <div *ngIf="f.phoneNumber.errors.mustMatch">Please enter valid phone number</div>
+                                </div>
+                            </div>
+                            <div class="form-group margin-top-30 text-center">
+                                    <button class="ui-button" pButton (click)="contactUs($event)" label="Submit"></button>
+                                </div>
+                                <p-messages [(value)]="msgs"></p-messages>
+                            </form>
+                </p-accordionTab>
+            </p-accordion>
         </div>
     </div>
 </div>

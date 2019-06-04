@@ -3,26 +3,35 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from './../../services/user.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { MustMatch } from './../../_helpers/must-match.validator';
+import {CustomValidator} from '../../_helpers/customValidator';
 import { Router } from '@angular/router';
+import {SelectItem} from 'primeng/components/common/api';
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
+  providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
-  display:boolean =true;s
+  display:boolean =true;
   getLoginSubscription = null;
   userDetetails = null;
   loginForm: FormGroup;
+  contactUsForm:FormGroup;
   submitted = null;
   invalid = false;
   emailOrNot: boolean;
   otherLoginIssue = null;
+  msgs: Message[] = [];
 
   constructor(
     private userService: UserService,
+    public messageService: MessageService,
+    public ValidatorService:CustomValidator,
     private fb: FormBuilder,
     private router: Router) {
     this.userDetetails = null;
@@ -30,9 +39,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.loginForm = this.fb.group({
       emailOrmobile: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    this.contactUsForm = this.fb.group({
+      email: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
 
@@ -74,5 +88,18 @@ export class LoginComponent implements OnInit {
   showDIV($evnet){
     this.otherLoginIssue=false;
   }
+  contactUs(){
+    this.msgs = [];
+    this.msgs.push({severity:'success', detail:'Admin contact to you soon'});
+       console.log("data submitted successfully");
+  }
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({severity:'success', detail:'Admin contact to you soon'});
+}
 
+ 
+  clear() {
+    this.msgs = [];
+  }
 }
