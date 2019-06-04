@@ -107,11 +107,11 @@ top:-12px;
     color:#e32;
 }
 :host::ng-deep .ui-accordion .ui-accordion-content{
-    min-height: 400px;
+    min-height: 500px;
     border:none;
 }
-.min-height-400{
-    min-height:450px
+.min-height-450{
+    min-height:500px
 }
 :host ::ng-deep .ui-accordion .ui-accordion-header a {
     background: #26a69a;
