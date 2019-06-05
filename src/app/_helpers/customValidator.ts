@@ -232,6 +232,29 @@ export class CustomValidator {
   removeDecorationFromNumber(value) {
     return (value) ? (value.toString()).split(',').join('') : "";
   }
+  phoneNumberAndEmail(control){
+    try {
+      let val = control.value;
+      if (val === null || val === '') return null;
+      if (!val.toString().match(/^[0-9]{10}$/) && !val.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ) {
+        return { 'invalidEmailOrNumber': true };
+      } else {
+        return null;
+      }
+    } catch (e) { }
+  }
+
+  phoneNumberValidation(control){
+    try {
+      let val = control.value;
+      if (val === null || val === '') return null;
+      if (!val.toString().match(/^[0-9]{10}$/)) {
+        return { 'invalidNumber': true };
+      } else {
+        return null;
+      }
+    } catch (e) { }
+  }
 
 
 }

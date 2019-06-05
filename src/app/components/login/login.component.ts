@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     public messageService: MessageService,
     public ValidatorService:CustomValidator,
     private fb: FormBuilder,
+    public customValidator:CustomValidator,
     private router: Router) {
     this.userDetetails = null;
     this.otherLoginIssue = true
@@ -41,12 +42,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     this.loginForm = this.fb.group({
-      emailOrmobile: ['', [Validators.required]],
+      emailOrmobile: ['', [Validators.required,this.customValidator.phoneNumberAndEmail]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.contactUsForm = this.fb.group({
-      email: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required, Validators.minLength(10)]]
+      email: ['', [Validators.required,this.customValidator.emailValidator]],
+      phoneNumber: ['', [Validators.required, this.customValidator.phoneNumberValidation]]
     });
   }
 
@@ -98,7 +99,7 @@ export class LoginComponent implements OnInit {
     this.msgs.push({severity:'success', detail:'Admin contact to you soon'});
 }
 
- 
+
   clear() {
     this.msgs = [];
   }

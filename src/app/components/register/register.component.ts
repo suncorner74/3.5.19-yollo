@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import { MustMatch } from './_helpers/must-match.validator';\
 import { FileUploadModule } from 'primeng/fileupload';
 import { UserService } from './../../services/user.service'
+import { MustMatch } from 'src/app/_helpers/must-match.validator';
+import { CustomValidator } from 'src/app/_helpers/customValidator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +13,7 @@ import { UserService } from './../../services/user.service'
   encapsulation: ViewEncapsulation.Emulated
 })
 export class RegisterComponent implements OnInit {
-  @Input() display :boolean = false;
+  @Input() display: boolean = false;
   selectedValues: string[] = [];
   registerForm: FormGroup;
   submitted = false;
@@ -23,17 +25,20 @@ export class RegisterComponent implements OnInit {
   uploadedFiles: any[] = [];
 
   constructor(private formBuilder: FormBuilder,
-    private userService: UserService) { }
+    private userService: UserService,
+    private customValidator:CustomValidator) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required,this.customValidator.phoneNumberValidation]],
+      role: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      phoneNumber: ['',Validators.required,Validators.minLength(10)],
-      role: ['',Validators.required]
-    });
+    }, {
+        validator: MustMatch('password', 'confirmPassword')
+      });
   }
 
   // convenience getter for easy access to form fields
