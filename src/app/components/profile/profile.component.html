@@ -3,7 +3,7 @@
     <form [formGroup]="profileForm">
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-top-50">
-                <h2 class="font-22 ">Update user Profile</h2>
+                <h2 class="update-header ">Update user Profile</h2>
                 <div class="form-group ui-g-12 ui-md-6 ui-lg-6  padding-top-30 padding-left-0">
                     <div class="ui-float-label">
                         <input class="form-control" id="float-input" formControlName="firstName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -19,8 +19,7 @@
 
                 </div>
 
-            <div class="ui-g-12 ui-md-6 ui-lg-6 ">
-                <div class="form-group  ">
+            <div class="ui-g-12 ui-md-6 ui-lg-6 height-60">
                     <p-fileUpload name="demo[]" url="./" [showCancelButton]="false" [showUploadButton]="false" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000">
                         <ng-template pTemplate="content">
                             <ul *ngIf="uploadedFiles.length">
@@ -28,14 +27,13 @@
                             </ul>
                         </ng-template>
                     </p-fileUpload>
-                </div>
 
             </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-right-15">
                 <div class="form-group">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="email" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <input class="form-control" id="float-input" formControlName="email" type="email" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                         <label for="float-input">Email Id
                             <span class="color-red">*</span>
                         </label>
@@ -51,7 +49,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 ">
                 <div class="form-group">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="phoneNumber" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                        <input class="form-control" id="float-input" formControlName="phoneNumber" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" minlength="0" maxlength="10"/>
                         <label for="float-input">Phone Number
                             <span class="color-red">*</span>
                         </label>
@@ -64,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="ui-g">
+        <div class="">
             <div class="ui-g-12 ui-md-6 ui-lg-4  padding-right-15">
                 <div class="form-group ">
                     <div class="ui-float-label">
@@ -80,12 +78,13 @@
                 </div>
 
             </div>
-            <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15">
+            <div class="ui-g-12 ui-md-6 ui-lg-6 padding-left-15 padding-right-15">
                 <div class="form-group ">
-                    <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="dateOfBirth" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" />
+                    <div class="ui-float-label  ">
+                        <!-- <input class="form-control" id="float-input" formControlName="dateOfBirth" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" /> -->
+                        <p-calendar  [(ngModel)]="value" formControlName="dateOfBirth"></p-calendar>
                         <label for="float-input">Date Of Birth(optional)
-                        </label>
+                            </label>
                     </div>
                     <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
                         <div *ngIf="f.dateOfBirth.errors.required">Date Of Birth is required</div>
@@ -97,7 +96,7 @@
 
         <div class="ui-g">
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
-                <div class="form-group">
+                <div class="">
                     <label for="" class="radio-label"> Gender</label>
                     <div class="user-option">
                         <div class="user-type-radio ">
@@ -115,7 +114,7 @@
                 </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0">
-                <div class="form-group ">
+                <div class=" padding-top-20">
                     <label for="" class="radio-label"> Which type of user you are ?</label>
                     <div class="user-option">
                         <div class="user-type-radio ">
