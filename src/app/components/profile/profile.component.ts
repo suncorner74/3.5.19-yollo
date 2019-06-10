@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   getUpdateSubscription: any;
   userDetetails: any;
   uploadedFiles: any[] = [];
+  value: Date;
 
   constructor(private formBuilder: FormBuilder, private customValidator: CustomValidator,
     private userProfile: UserProfileService,

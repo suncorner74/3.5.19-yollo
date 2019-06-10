@@ -1,6 +1,6 @@
 .page-container {
     width: 100%;
 }
-:host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error){
-    border-bottom:1px solid #26a69a !important;
+ .ui-inputtext.ng-dirty.ng-invalid, body[_ngcontent-shh-c8] p-dropdown.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-dropdown[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-autocomplete.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-autocomplete[_ngcontent-shh-c8] > .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-calendar.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-calendar[_ngcontent-shh-c8] > .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-chips.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-inputmask.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-checkbox.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-chkbox-box[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-radiobutton.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-radiobutton-box[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-inputswitch.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-inputswitch[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-listbox.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-multiselect.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-multiselect[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-spinner.ng-dirty.ng-invalid[_ngcontent-shh-c8] > .ui-inputtext[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-selectbutton.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-button[_ngcontent-shh-c8], body[_ngcontent-shh-c8] p-togglebutton.ng-dirty.ng-invalid[_ngcontent-shh-c8] .ui-button[_ngcontent-shh-c8]{
+    border-bottom: 1px solid #26a69a;
 }
