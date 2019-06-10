@@ -6,6 +6,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { UserService } from './../../services/user.service'
 import { MustMatch } from 'src/app/_helpers/must-match.validator';
 import { CustomValidator } from 'src/app/_helpers/customValidator';
+import { DataShareService } from 'src/app/_helpers/data-share.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,13 +27,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private userService: UserService,
-    private customValidator:CustomValidator) { }
+    private customValidator: CustomValidator,
+    private dataShareService: DataShareService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required,this.customValidator.phoneNumberValidation]],
+      phoneNumber: ['', [Validators.required, this.customValidator.phoneNumberValidation]],
       role: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
@@ -45,23 +47,19 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
     this.getLoginSubscription = this.userService.register(this.registerForm.value)
       .subscribe((resp) => {
-        this.userDetetails = Object.assign({}, resp);
-        // this.router.navigateByUrl('/');
-        if (resp.user_level) {
-          location.reload();
-        } else {
-          this.invalid = true;
-        }
-
+        this.dataShareService.changeMessage(
+          {
+            label: 'succcessRegister',
+            data: true
+          });
+          this.registerForm.reset();
       }, (error) => {
         this.invalid = true;
         console.log(`error: ${error}`);

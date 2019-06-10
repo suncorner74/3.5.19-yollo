@@ -43,7 +43,7 @@
                                 </div>
                                 <div *ngIf="submitted && f.emailOrmobile.errors" class="invalid-feedback">
                                     <div *ngIf="f.emailOrmobile.errors.required">Email is required</div>
-                                    <div *ngIf="f.emailOrmobile.errors.invalidEmailOrNumber">Invalid Email id Or Phone number</div>
+                                    <div *ngIf="f.emailOrmobile.errors.invalidEmailOrNumber">Invalid Email id Or Mobile number</div>
 
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
 
                             <!-- <div class="form-group"> <span>By Logging in you in agree to your terms and condition and privacy policy</span></div> -->
                             <div class="form-group margin-top-50 text-center">
-                                <button class="ui-button" [disabled]="!loginForm.valid" pButton (click)="getLogin($event)" label="Login"></button>
+                                <button class="ui-button" pButton (click)="getLogin($event)" label="Login"></button>
                             </div>
                         </div>
                     </form>
@@ -115,8 +115,12 @@
                                 <div *ngIf="f.phoneNumber.errors.invalidNumber">Please enter valid phone number</div>
                             </div>
                         </div>
+                        <div class="text-right">
+                            <span class="padding-lr"><a (click)="loginBack($event)">Login</a></span>
+
+                        </div>
                         <div class="form-group margin-top-30 text-center">
-                            <button class="ui-button" pButton (click)="contactUs($event)" [disabled]="!contactUsForm.valid" label="Submit"></button>
+                            <button class="ui-button" pButton (click)="contactUs($event)" label="Submit"></button>
                         </div>
                         <p-messages [(value)]="msgs"></p-messages>
                     </form>

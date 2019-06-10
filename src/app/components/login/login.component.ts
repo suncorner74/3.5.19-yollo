@@ -3,11 +3,11 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserService } from './../../services/user.service';
 import { InputTextModule } from 'primeng/inputtext';
 import { MustMatch } from './../../_helpers/must-match.validator';
-import {CustomValidator} from '../../_helpers/customValidator';
+import { CustomValidator } from '../../_helpers/customValidator';
 import { Router } from '@angular/router';
-import {SelectItem} from 'primeng/components/common/api';
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { SelectItem } from 'primeng/components/common/api';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +17,11 @@ import {MessageService} from 'primeng/components/common/messageservice';
   providers: [MessageService]
 })
 export class LoginComponent implements OnInit {
-  display:boolean =true;
+  display: boolean = true;
   getLoginSubscription = null;
   userDetetails = null;
   loginForm: FormGroup;
-  contactUsForm:FormGroup;
+  contactUsForm: FormGroup;
   submitted = null;
   invalid = false;
   emailOrNot: boolean;
@@ -31,22 +31,22 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     public messageService: MessageService,
-    public ValidatorService:CustomValidator,
+    public ValidatorService: CustomValidator,
     private fb: FormBuilder,
-    public customValidator:CustomValidator,
+    public customValidator: CustomValidator,
     private router: Router) {
     this.userDetetails = null;
-    this.otherLoginIssue = true
+    this.otherLoginIssue = true;
   }
 
   ngOnInit() {
 
     this.loginForm = this.fb.group({
-      emailOrmobile: ['', [Validators.required,this.customValidator.phoneNumberAndEmail]],
+      emailOrmobile: ['', [Validators.required, this.customValidator.phoneNumberAndEmail]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
     this.contactUsForm = this.fb.group({
-      email: ['', [Validators.required,this.customValidator.emailValidator]],
+      email: ['', [Validators.required, this.customValidator.emailValidator]],
       phoneNumber: ['', [Validators.required, this.customValidator.phoneNumberValidation]]
     });
   }
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
     this.getLoginSubscription = this.userService.login(this.loginForm.value, this.emailOrNot)
       .subscribe((resp) => {
         this.userDetetails = Object.assign({}, resp);
-        // this.router.navigateByUrl('/');
+        this.router.navigateByUrl('profile');
         if (resp.user_level) {
           location.reload();
         } else {
@@ -86,21 +86,25 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  showDIV($evnet){
-    this.otherLoginIssue=false;
+  showDIV($evnet) {
+    this.otherLoginIssue = false;
   }
-  contactUs(){
+  contactUs() {
     this.msgs = [];
-    this.msgs.push({severity:'success', detail:'Admin contact to you soon'});
-       console.log("data submitted successfully");
+    this.msgs.push({ severity: 'success', detail: 'Admin contact to you soon' });
+    console.log("data submitted successfully");
   }
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', detail:'Admin contact to you soon'});
-}
+    this.msgs.push({ severity: 'success', detail: 'Admin contact to you soon' });
+  }
 
 
   clear() {
     this.msgs = [];
+  }
+  loginBack(event) {
+    this.otherLoginIssue = true;
+
   }
 }

@@ -27,7 +27,7 @@ export class UserService {
 
 
   register(user) {
-    let url: string = `http://localhost:3000/users/login`;
+    let url: string = `http://localhost:3000/users/register`;
     return this.http.post<any>(url, user)
       .pipe(map(user => {
         if (user) {
