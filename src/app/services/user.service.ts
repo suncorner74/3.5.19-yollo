@@ -16,7 +16,7 @@ export class UserService {
       emailOrNot: emailOrNot
     }
     let url: string = `http://localhost:3000/users/login`;
-    return this.http.post<any>(url, user)
+    return this.http.post<any>(url, userDetail)
       .pipe(map(user => {
         if (user) {
           sessionStorage.setItem('currentUser', JSON.stringify(userDetail));
