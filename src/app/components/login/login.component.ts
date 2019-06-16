@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { SelectItem } from 'primeng/components/common/api';
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
+import { DataShareService } from 'src/app/_helpers/data-share.service';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
     public ValidatorService: CustomValidator,
     private fb: FormBuilder,
     public customValidator: CustomValidator,
-    private router: Router) {
+    private router: Router,
+    private dataShareService: DataShareService) {
     this.userDetetails = null;
     this.otherLoginIssue = true;
   }
@@ -66,13 +68,12 @@ export class LoginComponent implements OnInit {
     this.getLoginSubscription = this.userService.login(this.loginForm.value, this.emailOrNot)
       .subscribe((resp) => {
         this.userDetetails = Object.assign({}, resp);
+        this.dataShareService.changeMessage(
+          {
+            label: 'successLogin',
+            data: true
+          });
         this.router.navigateByUrl('profile');
-        if (resp.user_level) {
-          location.reload();
-        } else {
-          this.invalid = true;
-        }
-
       }, (error) => {
         this.invalid = true;
         console.log(`error: ${error}`);

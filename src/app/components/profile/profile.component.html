@@ -6,20 +6,20 @@
                 <h2 class="update-header ">Update user Profile</h2>
                 <div class="form-group ui-g-12 ui-md-6 ui-lg-6  padding-top-30 padding-left-0">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="firstName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <input class="form-control" id="float-input" formControlName="name" [ngModel]="loggedInUser.name" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
                         <label for="float-input">Name
                             <span class="color-red">*</span>
                         </label>
                     </div>
-                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                        <div *ngIf="f.firstName.errors.required">Full Name is required</div>
-                        <div *ngIf="f.firstName.errors.invalidAlphaNumericString">Invalid Name</div>
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Full Name is required</div>
+                        <div *ngIf="f.name.errors.invalidAlphaNumericString">Invalid Name</div>
 
                     </div>
 
                 </div>
 
-            <div class="ui-g-12 ui-md-6 ui-lg-6 height-60">
+                <div class="ui-g-12 ui-md-6 ui-lg-6 height-60">
                     <p-fileUpload name="demo[]" url="./" [showCancelButton]="false" [showUploadButton]="false" (onUpload)="onUpload($event)" multiple="multiple" accept="image/*" maxFileSize="1000000">
                         <ng-template pTemplate="content">
                             <ul *ngIf="uploadedFiles.length">
@@ -28,12 +28,12 @@
                         </ng-template>
                     </p-fileUpload>
 
-            </div>
+                </div>
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-right-15">
                 <div class="form-group">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="email" type="email" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <input class="form-control" id="float-input" formControlName="email" [ngModel]="loggedInUser.email_address" type="email" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                         <label for="float-input">Email Id
                             <span class="color-red">*</span>
                         </label>
@@ -49,7 +49,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 ">
                 <div class="form-group">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="phoneNumber" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" minlength="0" maxlength="10"/>
+                        <input class="form-control" id="float-input" formControlName="phoneNumber" [ngModel]="loggedInUser.phone_number" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" minlength="0" maxlength="10" />
                         <label for="float-input">Phone Number
                             <span class="color-red">*</span>
                         </label>
@@ -66,7 +66,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4  padding-right-15">
                 <div class="form-group ">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="pancard" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.pancard.errors }" />
+                        <input class="form-control" id="float-input" formControlName="pancard" [ngModel]="loggedInUser.pancard" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.pancard.errors }" />
                         <label for="float-input">Pancard Number
                             <span class="color-red">*</span>
                         </label>
@@ -82,7 +82,7 @@
                 <div class="form-group ">
                     <div class="ui-float-label  ">
                         <!-- <input class="form-control" id="float-input" formControlName="dateOfBirth" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }" /> -->
-                        <p-calendar  [(ngModel)]="value" formControlName="dateOfBirth"></p-calendar>
+                        <p-calendar [(ngModel)]="value" formControlName="dateOfBirth" [ngModel]="loggedInUser.dateOfBirth"></p-calendar>
                         <label for="float-input">Date Of Birth(optional)
                             </label>
                     </div>
@@ -147,14 +147,14 @@
 
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0" *ngIf="salaryType">
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="Basic" label="Basic" [(ngModel)]="selectedValues1" formControlName="salryType" inputId="bs">
+                    <p-checkbox name="group1" value="0" label="Basic" [(ngModel)]="selectedValues1" formControlName="salryType" inputId="bs">
                     </p-checkbox>
                 </div>
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="captialgain" label="Basic with Capital Gain" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bcg"></p-checkbox>
+                    <p-checkbox name="group1" value="1" label="Basic with Capital Gain" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bcg"></p-checkbox>
                 </div>
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="foreignincome" label="Basic with Foreign income" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bfi"></p-checkbox>
+                    <p-checkbox name="group1" value="2" label="Basic with Foreign income" [(ngModel)]="selectedValues2" formControlName="salryType" inputId="bfi"></p-checkbox>
                 </div>
                 <div *ngIf="submitted && f.salryType.errors" class="invalid-feedback">
                     <div *ngIf="f.salryType.errors.required">salryType is required</div>
@@ -163,14 +163,14 @@
             </div>
             <div class="ui-g-12 ui-md-6 ui-lg-12 padding-left-0" *ngIf="buisnessCheck">
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="smallBusiness" label="Small Buisness " [(ngModel)]="selectedbuisnessValues1" formControlName="businesstype" inputId="sb">
+                    <p-checkbox name="group1" value="0" label="Small Buisness " [(ngModel)]="selectedbuisnessValues1" formControlName="businesstype" inputId="sb">
                     </p-checkbox>
                 </div>
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="mediumBusinsess" label="Medium Buinsess" [(ngModel)]="selectedbuisnessValues2" formControlName="businesstype" inputId="mb"></p-checkbox>
+                    <p-checkbox name="group1" value="1" label="Medium Buinsess" [(ngModel)]="selectedbuisnessValues2" formControlName="businesstype" inputId="mb"></p-checkbox>
                 </div>
                 <div class="ui-g-12">
-                    <p-checkbox name="group1" value="largeBusinsess" label="Large Buinsess" [(ngModel)]="selectedbuisnessValues3" formControlName="businesstype" inputId="lb"></p-checkbox>
+                    <p-checkbox name="group1" value="2" label="Large Buinsess" [(ngModel)]="selectedbuisnessValues3" formControlName="businesstype" inputId="lb"></p-checkbox>
                 </div>
                 <div *ngIf="submitted && f.businesstype.errors" class="invalid-feedback">
                     <div *ngIf="f.businesstype.errors.required">salryType is required</div>

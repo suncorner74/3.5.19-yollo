@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidator } from 'src/app/_helpers/customValidator';
 import { UserProfileService } from 'src/app/services/user-profile.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,17 +17,28 @@ export class ProfileComponent implements OnInit {
   buisnessCheck = false;
   submitted: boolean;
   getUpdateSubscription: any;
-  userDetetails: any;
+  userDetetails = null;
   uploadedFiles: any[] = [];
   value: Date;
+  loggedInUser: {};
+  userid = null;
 
   constructor(private formBuilder: FormBuilder, private customValidator: CustomValidator,
     private userProfile: UserProfileService,
-   ) { }
+    private userService: UserService
+  ) {
+    this.loggedInUser = {
+      name: ""
+    }
+  }
 
   ngOnInit() {
+    // this.loggedInUser = this.userService.getLoggedInUser();
+    this.getUserDetails().then((data) => {
+      console.log(data);
+    });
     this.profileForm = this.formBuilder.group({
-      firstName: ['', Validators.required, this.customValidator.alphaNumericValidator],
+      name: ['', [Validators.required, this.customValidator.alphaNumericValidator]],
       email: ['', [Validators.required, this.customValidator.emailValidator]],
       phoneNumber: ['', [Validators.required, Validators.minLength(10), this.customValidator.numericValidator]],
       pancard: ['', [Validators.required, this.customValidator.panValidator]],
@@ -73,15 +85,13 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
-    this.getUpdateSubscription = this.userProfile.update(this.profileForm.value)
+    this.getUpdateSubscription = this.userProfile.update(this.profileForm.value, this.userid)
       .subscribe((resp) => {
-        this.userDetetails = Object.assign({}, resp);
-
+        this.userDetetails = this.profileForm.value;
+        alert('updated');
       }, (error) => {
         console.log(`error: ${error}`);
       });
-
-
   }
 
   hideDetail() {
@@ -98,7 +108,19 @@ export class ProfileComponent implements OnInit {
     for (let file of event.files) {
       this.uploadedFiles.push(file);
     }
-
-    // this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });
+  }
+  getUserDetails() {
+    return new Promise((resolve, reject) => {
+      this.userid = sessionStorage.getItem('_@ux_');
+      if (this.userid) {
+        this.userProfile.getUser(this.userid).subscribe((data) => {
+          this.loggedInUser = Object.assign({}, data);
+          resolve(data);
+        }, (error) => {
+          console.log(error);
+          reject(error);
+        })
+      }
+    })
   }
 }

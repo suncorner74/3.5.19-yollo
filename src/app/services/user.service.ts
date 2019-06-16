@@ -7,8 +7,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
+  isloggedIn: boolean = false;
+  redirectUrl: string;
+  loginUrl = '/home';
+  loggedInUser: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
   login(user, emailOrNot) {
     var userDetail = {
       emailOrNumber: user.emailOrmobile,
@@ -19,7 +24,10 @@ export class UserService {
     return this.http.post<any>(url, userDetail)
       .pipe(map(user => {
         if (user) {
-          sessionStorage.setItem('currentUser', JSON.stringify(userDetail));
+          sessionStorage.setItem('_token_', JSON.stringify(user.token));
+          sessionStorage.setItem('_@ux_', JSON.stringify(user.id));
+          this.isloggedIn = true;
+          this.loggedInUser = JSON.stringify(user);
         }
         return user;
       }));
@@ -30,14 +38,31 @@ export class UserService {
     let url: string = `http://localhost:3000/users/register`;
     return this.http.post<any>(url, user)
       .pipe(map(user => {
-        if (user) {
-          sessionStorage.setItem('currentUser', JSON.stringify(user));
-        }
         return user;
       }));
   }
 
   logout() {
     sessionStorage.clear();
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.isloggedIn;
+  }
+  getRedirectUrl(): string {
+    return this.redirectUrl;
+  }
+  setRedirectUrl(url: string): void {
+    this.redirectUrl = url;
+  }
+  getLoginUrl(): string {
+    return this.loginUrl;
+  }
+
+  logoutUser(): void {
+    this.isloggedIn = false;
+  }
+  getLoggedInUser() {
+    return this.loggedInUser;
   }
 }
