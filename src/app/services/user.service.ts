@@ -35,8 +35,15 @@ export class UserService {
 
 
   register(user) {
+    var userDetail = {
+      fullName: user.fullName,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      role:1,
+      password:user.password
+    }
     let url: string = `http://localhost:3000/users/register`;
-    return this.http.post<any>(url, user)
+    return this.http.post<any>(url, userDetail)
       .pipe(map(user => {
         return user;
       }));

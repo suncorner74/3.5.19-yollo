@@ -1,8 +1,11 @@
 
   :host ::ng-deep.ui-dialog .ui-dialog-content{ border:none;}
   :host ::ng-deep .ui-dialog .ui-dialog-titlebar{
-    background: linear-gradient(to right, #26a69a 47.2%, #fff 0) !important;
+    background: linear-gradient(to right, #26a69a 48.2%, #fff 0) !important;
       padding:5px;
       border: none;
   }
-  
+  :host::ng-deep .ui-dialog-resizable .ui-dialog-content {
+    overflow: hidden;
+   min-height: auto;
+}

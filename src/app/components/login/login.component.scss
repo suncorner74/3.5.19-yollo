@@ -137,11 +137,12 @@ body p-togglebutton.ng-dirty.ng-invalid .ui-button {
 }
 
 :host ::ng-deep.ui-tabview {
-    min-height: 600px;
+    height: 500px;
+    overflow:auto;
 }
 
 .invalid-feedback {
-    padding: 20px 0;
+    padding: 10px 0;
     color: #e32;
 }
 
@@ -185,4 +186,22 @@ body p-togglebutton.ng-dirty.ng-invalid .ui-button {
 
 .text-right {
     text-align: right;
+}
+.sub-btn, .back-btn{
+    width:136px;
+    height:44px;
+}
+.back-btn{
+   
+    background:#fff;
+    border:1px solid #26a69a;
+    color:#26a69a !important;
+    
+}
+:host::ng-deep.ui-button.back-btn:enabled:hover{
+    background:#fff;
+     color:#26a69a ;
+}
+.margin-right-30{
+    margin-right:30px;
 }

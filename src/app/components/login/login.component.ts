@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
     }
     var email = this.loginForm.value.emailOrmobile;
     var index = email.indexOf("@");
-    if (index) {
+    if (index > -1) {
       this.emailOrNot = true;
     }
     this.getLoginSubscription = this.userService.login(this.loginForm.value, this.emailOrNot)

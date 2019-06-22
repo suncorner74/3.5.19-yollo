@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   display: boolean = false;
+  providerPopup:boolean=false;
   closeResult: string;
   userDetails = null;
   sucessRegister = false;
@@ -53,7 +54,9 @@ export class HeaderComponent implements OnInit {
   showDialog() {
     this.display = true;
   }
-
+    providerModelPopup(){
+      this.providerPopup =true;
+    }
   logout() {
     sessionStorage.clear();
     // location.reload();

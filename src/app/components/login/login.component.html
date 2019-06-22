@@ -115,14 +115,14 @@
                                 <div *ngIf="f.phoneNumber.errors.invalidNumber">Please enter valid phone number</div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <span class="padding-lr"><a (click)="loginBack($event)">Login</a></span>
-
-                        </div>
-                        <div class="form-group margin-top-30 text-center">
-                            <button class="ui-button" pButton (click)="contactUs($event)" label="Submit"></button>
+                        <div class="form-group margin-top-30 ">
+                          
+                            <button class="ui-button sub-btn  margin-right-30" pButton (click)="contactUs($event)" label="Submit"></button>
+                            <button class= "ui-button back-btn "  pButton (click)="loginBack($event)" label="Back "></button>
+                        
                         </div>
                         <p-messages [(value)]="msgs"></p-messages>
+                       
                     </form>
                 </p-accordionTab>
             </p-accordion>
