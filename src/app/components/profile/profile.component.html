@@ -180,7 +180,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-0 padding-right-15" *ngIf="buisnessCheck">
                 <div class="form-group ">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="gst" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
+                        <input class="form-control" id="float-input" formControlName="gst" [ngModel]="loggedInUser.gst" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.gst.errors }" />
                         <label for="float-input">GST Number
                             <span class="color-red">*</span>
                         </label>
@@ -195,7 +195,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15" *ngIf="buisnessCheck">
                 <div class="form-group ">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="reg" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
+                        <input class="form-control" id="float-input" formControlName="reg" [ngModel]="loggedInUser.reg" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.reg.errors }" />
                         <label for="float-input">Registration Id
                                     <span class="color-red">*</span>
                                 </label>
@@ -211,7 +211,7 @@
             <div class="ui-g-12 ui-md-6 ui-lg-4 padding-left-15 padding-right-15" *ngIf="buisnessCheck">
                 <div class="form-group ">
                     <div class="ui-float-label">
-                        <input class="form-control" id="float-input" formControlName="firmName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firmName.errors }" />
+                        <input class="form-control" id="float-input" formControlName="firmName" [ngModel]="loggedInUser.firmName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.firmName.errors }" />
                         <label for="float-input">Business or Firm Name
                         <span class="color-red">*</span>
                     </label>
