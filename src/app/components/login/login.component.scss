@@ -147,7 +147,7 @@ body p-togglebutton.ng-dirty.ng-invalid .ui-button {
 }
 
 :host::ng-deep .ui-accordion .ui-accordion-content {
-    min-height: 500px;
+  //  min-height: 500px;
     border: none;
 }
 
