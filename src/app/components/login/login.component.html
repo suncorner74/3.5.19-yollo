@@ -90,8 +90,8 @@
         <div class="ui-g-6 min-height-450" *ngIf="!otherLoginIssue">
             <p-accordion>
                 <p-accordionTab header="Contact Us">
-                    <form class="form" [formGroup]="contactUsForm">
-                        <div class="form-group">
+                    <form class="form " [formGroup]="contactUsForm">
+                        <div class="form-group margin-tb-20">
                             <div class="ui-float-label">
                                 <input class="form-control" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
                                 <label for="float-input">Registered email Id
@@ -103,7 +103,7 @@
                                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group margin-tb-20">
                             <div class="ui-float-label">
                                 <input type="text" minlength="0" maxlength="10" size="10" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
                                 <label for="float-input">Phone Number
