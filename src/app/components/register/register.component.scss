@@ -1,123 +1,142 @@
 .form-group {
-  min-height: 20px;
+    min-height: 20px;
 }
+
 .color-red {
-  font-weight: bold;
-  color: #e32;
+    font-weight: bold;
+    color: #e32;
 }
+
 .padding-tb-20 {
-  padding-top: 20px;
+    padding-top: 20px;
 }
+
 :host::ng-deep .ui-button {
-  background: #26a69a;
-  width: 100%;
-  height: 45px;
-  font-family: "Camphor";
-  font-size: 20px;
-  text-align: center;
-  vertical-align: middle;
-  box-sizing: border-box;
-  border-radius: 3px;
-  line-height: 24px;
-  border: 1px solid #26a69a;
+    background: #26a69a;
+    width: 100%;
+    height: 45px;
+    font-family: "Camphor";
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 3px;
+    line-height: 24px;
+    border: 1px solid #26a69a;
 }
+
 :host::ng-deep.ui-button:enabled:hover {
-  background: #26a69a;
-  border: 1px solid #26a69a;
+    background: #26a69a;
+    border: 1px solid #26a69a;
 }
 
 :host ::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav {
-  margin-bottom: -18px;
+    margin-bottom: -18px;
 }
+
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active a,
 :host ::ng-deep .ui-tabview.ui-tabview-bottom .ui-tabview-nav li.ui-state-active a,
 body .ui-tabview.ui-tabview-left .ui-tabview-nav li.ui-state-active a,
 body .ui-tabview.ui-tabview-right .ui-tabview-nav li.ui-state-active a {
-  color: #000 !important;
+    color: #000 !important;
 }
+
 :host ::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active:hover,
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li.ui-state-active {
-  border-width: 0 0 2px 0;
-  border-color: #26a69a;
-  background-color: #fff !important;
+    border-width: 0 0 2px 0;
+    border-color: #26a69a;
+    background-color: #fff !important;
 }
+
 .background-color {
-  background: #26a69a;
-  margin-top: -8px;
-  margin-left: -14px;
+    background: #26a69a;
+    margin-top: -8px;
+    margin-left: -14px;
 }
+
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li:not(.ui-state-active):not(.ui-state-disabled):hover {
-  background: #fff;
-  border: 0;
+    background: #fff;
+    border: 0;
 }
+
 :host::ng-deep .ui-tabview.ui-tabview-top .ui-tabview-nav li {
-  background: #fff;
-  border: none;
+    background: #fff;
+    border: none;
 }
+
 :host::ng-deep .ui-tabview .ui-tabview-panels {
-  border: 0;
-  padding-left: 0;
+    border: 0;
+    padding-left: 0;
 }
+
 ul li {
-  list-style-type: none;
-  margin: 30px 0 30px 10px;
+    list-style-type: none;
+    margin: 30px 0 30px 10px;
 }
+
 h3 {
-  padding-left: 10px;
-  color: #000;
-  margin-top: 20px;
+    padding-left: 10px;
+    color: #000;
+    margin-top: 20px;
 }
-:host::ng-deep.ui-float-label > input:focus ~ label,
-.ui-float-label > input.ui-state-filled ~ label,
-.ui-float-label > .ui-inputwrapper-focus ~ label,
-.ui-float-label > .ui-inputwrapper-filled ~ label {
-  top: 5px;
+
+:host::ng-deep.ui-float-label>input:focus~label,
+.ui-float-label>input.ui-state-filled~label,
+.ui-float-label>.ui-inputwrapper-focus~label,
+.ui-float-label>.ui-inputwrapper-filled~label {
+    top: 5px;
 }
+
 :host::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error) {
-  border-bottom: 1px solid #26a69a !important;
+    border-bottom: 1px solid #26a69a !important;
 }
+
 :host::ng-deep.ui-inputtext:focus {
-  border: none;
+    border: none;
 }
 
 :host::ng-deep .ui-inputtext.ng-dirty.ng-invalid,
-body p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
-body p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext,
-body p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext,
-body p-chips.ng-dirty.ng-invalid > .ui-inputtext,
-body p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
+body p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+body p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+body p-calendar.ng-dirty.ng-invalid>.ui-calendar>.ui-inputtext,
+body p-chips.ng-dirty.ng-invalid>.ui-inputtext,
+body p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
 body p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
 body p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
 body p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
 body p-listbox.ng-dirty.ng-invalid .ui-inputtext,
-body p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
-body p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
+body p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+body p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
 body p-selectbutton.ng-dirty.ng-invalid .ui-button,
 body p-togglebutton.ng-dirty.ng-invalid .ui-button {
-  border: none;
+    border: none;
 }
 
-:host::ng-deep .ui-tabview.ui-tabview-top > .ui-tabview-nav li {
-  top: -12px;
+:host::ng-deep .ui-tabview.ui-tabview-top>.ui-tabview-nav li {
+    top: -12px;
 }
 
 :host ::ng-deep .ui-dialog .ui-dialog-content {
-  border: none;
+    border: none;
 }
+
 :host::ng-deep.ui-dialog .ui-dialog-titlebar {
-  background: #fff;
-  padding: 5px;
-  border: none;
+    background: #fff;
+    padding: 5px;
+    border: none;
 }
+
 .color-red {
-  color: red;
-  font-weight: 600;
+    color: red;
+    font-weight: 600;
 }
+
 .color-gray {
-  color: #9e9e9e;
-  font-size: 14px;
-  margin-top: 20px;
+    color: #9e9e9e;
+    font-size: 14px;
+    margin-top: 20px;
 }
+
 :host::ng-deep input:not([type]),
 input[type="text"]:not(.browser-default),
 input[type="password"]:not(.browser-default),
@@ -131,37 +150,46 @@ input[type="tel"]:not(.browser-default),
 input[type="number"]:not(.browser-default),
 input[type="search"]:not(.browser-default),
 textarea.materialize-textarea {
-  margin: 0 0 15px 0 !important;
+    margin: 0 0 15px 0 !important;
 }
+
 :host ::ng-deep.ui-button:enabled:hover {
-  background-color: #26a69a;
+    background-color: #26a69a;
 }
 
 :host::ng-deep.ui-button:enabled:active,
 :host::ng-deep.ui-button:hover {
-  background-color: #26a69a;
-  color: #ffffff;
-  border-color: #26a69a;
+    background-color: #26a69a;
+    color: #ffffff;
+    border-color: #26a69a;
 }
+
 :host::ng-deep .ui-button:enabled:focus {
-  box-shadow: 0;
+    box-shadow: 0;
 }
+
 .margin-top-20 {
-  margin-top: 20px;
+    margin-top: 20px;
 }
+
 .user-type-radio {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
-.invalid-feedback{
-    padding:20px 0;
-    color:#e32;
+.invalid-feedback {
+    padding: 20px 0;
+    color: #e32;
 }
-:host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error){
-    border-bottom:1px solid #26a69a !important;
-}
-:host ::ng-deep.ui-inputtext.ng-dirty.ng-invalid{
-    border-bottom:1px solid #26a69a !important;
 
+:host ::ng-deep .ui-inputtext:enabled:hover:not(.ui-state-error) {
+    border-bottom: 1px solid #26a69a !important;
 }
-   
+
+:host ::ng-deep.ui-inputtext.ng-dirty.ng-invalid {
+    border-bottom: 1px solid #26a69a !important;
+}
+
+.eye-icon {
+    padding: 23px 0px 0 320px;
+    position: absolute;
+}

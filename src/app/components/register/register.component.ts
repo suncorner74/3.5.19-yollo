@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
   val1: string;
   val2: string = 'Provider';
   uploadedFiles: any[] = [];
+  show_button: Boolean = false;
+  show_eye: Boolean = true;
 
   constructor(private formBuilder: FormBuilder,
     private userService: UserService,
@@ -37,10 +39,11 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ['', [Validators.required, this.customValidator.phoneNumberValidation]],
       role: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-    }, {
-        validator: MustMatch('password', 'confirmPassword')
-      });
+    //   confirmPassword: ['', Validators.required],
+    // }, {
+    //     validator: MustMatch('password', 'confirmPassword')
+    //   });
+  });
   }
 
   // convenience getter for easy access to form fields
@@ -70,6 +73,10 @@ export class RegisterComponent implements OnInit {
     for (let file of event.files) {
       this.uploadedFiles.push(file);
     }
+  }
+  showPassword() {
+    this.show_button = !this.show_button;
+    this.show_eye = !this.show_eye;
   }
 }
 
