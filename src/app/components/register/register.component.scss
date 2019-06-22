@@ -1,5 +1,5 @@
 .form-group {
-    min-height: 40px;
+    min-height: 30px;
 }
 
 .color-red {
@@ -111,7 +111,9 @@ body p-selectbutton.ng-dirty.ng-invalid .ui-button,
 body p-togglebutton.ng-dirty.ng-invalid .ui-button {
     border: none;
 }
-
+.margin-tb-10{
+    margin:10px 0; 
+}
 :host::ng-deep .ui-tabview.ui-tabview-top>.ui-tabview-nav li {
     top: -12px;
 }

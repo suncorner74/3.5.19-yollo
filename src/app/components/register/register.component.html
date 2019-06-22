@@ -1,7 +1,7 @@
 <div class="form ">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <div class="ui-float-label">
+        <div class="form-group ">
+            <div class="ui-float-label ">
                 <input class="form-control" formControlName="fullName" type="text" size="30" pInputText [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" />
                 <label for="float-input">Full Name
                     <span class="color-red">*</span>
@@ -12,7 +12,7 @@
                 <div *ngIf="f.fullName.errors.required">Full Name is required</div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group  margin-tb-10">
             <div class="ui-float-label">
                 <input class="form-control" formControlName="email" type="text" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pInputText />
                 <label for="float-input">Email Address
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group  margin-tb-10">
             <div class="ui-float-label">
                 <div>
                     <i [ngClass]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" class="fa fa-eye eye-icon" (click)="showPassword()"></i>
@@ -58,9 +58,9 @@
 
             </div>
         </div> -->
-        <div class="form-group">
+        <div class="form-group  margin-tb-10">
             <div class="ui-float-label">
-                <input type="number" minlength="0" maxlength="10" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
+                <input type="number"  minlength="0" maxlength="10" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
                 <label for="float-input">Phone Number
                         <span class="color-red">*</span>
                   </label>
@@ -71,7 +71,7 @@
                 <div *ngIf="f.phoneNumber.errors.invalidNumber">Please enter valid phone number</div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group  margin-tb-10">
                 <div class="ui-float-label">
                         <input type="text"   pInputText />
                         <label for="float-input">Enter Your Location
