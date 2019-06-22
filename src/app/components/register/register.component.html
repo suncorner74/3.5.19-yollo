@@ -60,7 +60,7 @@
         </div> -->
         <div class="form-group">
             <div class="ui-float-label">
-                <input type="text" minlength="0" maxlength="10" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
+                <input type="number" minlength="0" maxlength="10" formControlName="phoneNumber" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" pInputText />
                 <label for="float-input">Phone Number
                         <span class="color-red">*</span>
                   </label>
@@ -76,7 +76,7 @@
 
         </div> -->
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <p class="color-gray">Type of User</p>
             <div class="user-type-radio">
                 <input id="user" type="radio" value="0" name="role" formControlName="role">
@@ -86,12 +86,11 @@
                 <input id="provider" type="radio" value="1" name="role" formControlName="role">
                 <label class="custom-control-label" for="provider"> Tax Professional</label>
             </div>
-            <!-- Showing error method -->
             <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
                 <div *ngIf="f.role.errors.required">Please select either value</div>
             </div>
 
-        </div>
+        </div> -->
         <div class="margin-top-20 ">
             <button class="ui-button" pButton type="button" label="Register" (click)="onSubmit($event)"></button>
         </div>
